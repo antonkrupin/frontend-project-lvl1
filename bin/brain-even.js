@@ -32,4 +32,4 @@ while (rightAnswerCounter < 3) {
         rightAnswerCounter += 1;
     }
 }
-console.log(`Congratulations ${userName}`);
+console.log(`Congratulations, ${userName}`);
