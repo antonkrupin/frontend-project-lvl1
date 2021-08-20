@@ -9,5 +9,6 @@ parserOptions:
 rules: {
   no-console: 0,
   linebreak-style: 0,
+  indent: ["error", 4],
   import/extensions: 0 # FIXME: remove when rule will be adjusted for new nodejs version
 }
