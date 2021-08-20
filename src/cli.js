@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
-const takeUserInput = () => {
-  const input = readlineSync.question('May I have your name? ');
-  return input;
+const takeUserInput = (userQuestion) => {
+    const input = readlineSync.question(userQuestion);
+    return input;
 };
 export default takeUserInput;
