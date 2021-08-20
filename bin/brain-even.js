@@ -4,7 +4,8 @@ import takeUserInput from '../src/cli.js';
 const getRandom = (max) => Math.floor(Math.random() * max);
 
 console.log('Welcome to the Brain Games!');
-console.log(`Hello, ${takeUserInput('May I have your name? ')}!`);
+const userName = takeUserInput('May I have your name? ');
+console.log(`Hello, ${userName}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let rightAnswerCounter = 0;
@@ -21,7 +22,13 @@ while (rightAnswerCounter < 3) {
     }
 
     if ((answer === 'no' && divisionRemainder === 0) || (answer === 'yes' && divisionRemainder !== 0)) {
-        console.log(`${answer} is wrong answer ;(. Correct was another`);
+        if (answer === 'yes') {
+            console.log(`${answer} is wrong answer ;(. Correct was 'no'`);
+            console.log(`Let\`s try again, ${userName}`);
+            break;
+        }
+        console.log(`${answer} is wrong answer ;(. Correct was 'yes'`);
+        console.log(`Let\`s try again, ${userName}`);
         break;
     }
 }
