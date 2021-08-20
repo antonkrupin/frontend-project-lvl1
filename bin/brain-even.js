@@ -5,7 +5,7 @@ let rightAnswerCounter = 0;
 const getRandom = (max) => Math.floor(Math.random() * max);
 
 console.log('Welcome to the Brain Games!');
-console.log(`Hello, ${takeUserInput()}!`);
+console.log(`Hello, ${takeUserInput('May I have your name? ')}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 while (rightAnswerCounter <= 3) {
