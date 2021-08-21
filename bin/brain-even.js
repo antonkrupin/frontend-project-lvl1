@@ -24,8 +24,8 @@ while (isRightAnswer) {
         isRightAnswer = false;
     }
 
-    if ((answer === 'no' && divisionRemainder === 0)
-        || (answer === 'yes' && divisionRemainder !== 0)) {
+    if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
+        || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
         if (answer === 'yes') {
             console.log(`${answer} is wrong answer ;(. Correct was 'no'`);
             console.log(`Let\`s try again, ${userName}`);
@@ -36,8 +36,8 @@ while (isRightAnswer) {
         isRightAnswer = false;
     }
 
-    if ((answer === 'yes' && divisionRemainder === 0)
-        || (answer === 'no' && divisionRemainder !== 0)) {
+    if ((checkUserAnswer(answer) && divisionRemainder === 0)
+        || (checkUserAnswer(answer, 'no') && divisionRemainder !== 0)) {
         console.log(`Your answer: ${answer}`);
         console.log('Correct!');
         rightAnswerCounter += 1;
