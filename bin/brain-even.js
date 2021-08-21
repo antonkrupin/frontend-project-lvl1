@@ -7,6 +7,7 @@ const userName = takeUserInput('May I have your name? ');
 console.log(`Hello, ${userName}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
+const endGameCounter = 3;
 let rightAnswerCounter = 0;
 let isRightAnswer = true;
 
@@ -42,7 +43,7 @@ while (isRightAnswer) {
         isRightAnswer = true;
     }
 
-    if (rightAnswerCounter === 3) {
+    if (rightAnswerCounter === endGameCounter) {
         console.log(`Congratulations, ${userName}!`);
         isRightAnswer = false;
     }
