@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import takeUserInput from '../src/cli.js';
-import { getRandom, checkUserAnswer } from '../src/brain-even-game.js';
+import { getRandom, checkUserAnswer, userWrongAnswerOutput } from '../src/brain-even-game.js';
 
 console.log('Welcome to the Brain Games!');
 const userName = takeUserInput('May I have your name? ');
@@ -26,13 +26,12 @@ while (isRightAnswer) {
     if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
         || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
         if (answer === 'yes') {
-            console.log(`${answer} is wrong answer ;(. Correct was 'no'`);
-            console.log(`Let\`s try again, ${userName}`);
+            userWrongAnswerOutput(userName, answer);
+            isRightAnswer = false;
+        } else {
+            userWrongAnswerOutput(userName, answer, 'yes');
             isRightAnswer = false;
         }
-        console.log(`${answer} is wrong answer ;(. Correct was 'yes'`);
-        console.log(`Let\`s try again, ${userName}`);
-        isRightAnswer = false;
     }
 
     if ((checkUserAnswer(answer) && divisionRemainder === 0)
