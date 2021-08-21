@@ -1,7 +1,7 @@
 const getRandom = (max) => Math.floor(Math.random() * max);
 
-export const checkUserAnswer = () => {
-
+const checkUserAnswer = () => {
+    console.log('test');
 };
 
-export default getRandom;
+export { checkUserAnswer, getRandom };
