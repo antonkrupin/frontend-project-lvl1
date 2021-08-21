@@ -44,7 +44,7 @@ while (isRightAnswer) {
     }
 
     if (rightAnswerCounter === 3) {
-        console.log(`Congratulations, ${userName}`);
+        console.log(`Congratulations, ${userName}!`);
         isRightAnswer = false;
     }
 }
