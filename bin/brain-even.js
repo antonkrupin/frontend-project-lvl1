@@ -10,8 +10,6 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let rightAnswerCounter = 0;
 let isRightAnswer = true;
 
-checkUserAnswer();
-
 while (isRightAnswer) {
     const randomNumber = getRandom(1000);
     console.log(`Question: ${randomNumber}`);
