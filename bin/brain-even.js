@@ -15,6 +15,10 @@ while (rightAnswerCounter < 3) {
     const answer = takeUserInput();
     const divisionRemainder = randomNumber % 2;
 
+    if (answer !== 'yes' || answer !== 'no') {
+        break;
+    }
+
     if ((answer === 'no' && divisionRemainder === 0) || (answer === 'yes' && divisionRemainder !== 0)) {
         if (answer === 'yes') {
             console.log(`${answer} is wrong answer ;(. Correct was 'no'`);
