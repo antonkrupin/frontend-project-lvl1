@@ -7,4 +7,9 @@ const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
     return false;
 };
 
-export { checkUserAnswer, getRandom };
+const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
+    console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
+    console.log(`Let\`s try again, ${userName}`);
+};
+
+export { checkUserAnswer, getRandom, userWrongAnswerOutput };
