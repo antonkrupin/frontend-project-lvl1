@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import takeUserInput from '../src/cli.js';
-import getRandom from '../src/brain-even-game.js';
+import { getRandom, checkUserAnswer } from '../src/brain-even-game.js';
 
 console.log('Welcome to the Brain Games!');
 const userName = takeUserInput('May I have your name? ');
@@ -9,6 +9,8 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let rightAnswerCounter = 0;
 let isRightAnswer = true;
+
+checkUserAnswer();
 
 while (isRightAnswer) {
     const randomNumber = getRandom(1000);
