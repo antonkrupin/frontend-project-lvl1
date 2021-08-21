@@ -10,7 +10,7 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let rightAnswerCounter = 0;
 let isRightAnswer = true;
 
-checkUserAnswer();
+// checkUserAnswer();
 
 while (isRightAnswer) {
     const randomNumber = getRandom(1000);
@@ -18,14 +18,14 @@ while (isRightAnswer) {
     const answer = takeUserInput();
     const divisionRemainder = randomNumber % 2;
 
-    if (answer !== 'yes' || answer !== 'no') {
+    if (answer !== 'yes' && answer !== 'no') {
         console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
         console.log(`Let\`s try again, ${userName}`);
         isRightAnswer = false;
     }
 
-    if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
-        || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
+    if ((answer === 'no' && divisionRemainder === 0)
+        || (answer === 'yes' && divisionRemainder !== 0)) {
         if (answer === 'yes') {
             console.log(`${answer} is wrong answer ;(. Correct was 'no'`);
             console.log(`Let\`s try again, ${userName}`);
@@ -36,8 +36,8 @@ while (isRightAnswer) {
         isRightAnswer = false;
     }
 
-    if ((checkUserAnswer(answer) && divisionRemainder === 0)
-        || (checkUserAnswer(answer, 'no') && divisionRemainder !== 0)) {
+    if ((answer === 'yes' && divisionRemainder === 0)
+        || (answer === 'no' && divisionRemainder !== 0)) {
         console.log(`Your answer: ${answer}`);
         console.log('Correct!');
         rightAnswerCounter += 1;
