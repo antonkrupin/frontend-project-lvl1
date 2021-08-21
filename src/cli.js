@@ -4,4 +4,7 @@ const takeUserInput = (userQuestion) => {
     const input = readlineSync.question(userQuestion);
     return input;
 };
-export default takeUserInput;
+
+const getRandom = (max) => Math.floor(Math.random() * max);
+
+export { takeUserInput, getRandom };
