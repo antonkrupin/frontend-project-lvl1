@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 import { takeUserInput, getRandom } from '../src/cli.js';
 
-// const getRandom = (max) => Math.floor(Math.random() * max);
-
 console.log('Welcome to the Brain Games!');
 const userName = takeUserInput('May I have your name? ');
 console.log(`Hello, ${userName}!`);
