@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { takeUserInput, getRandom } from '../src/cli.js';
+import takeUserInput from '../src/cli.js';
+import getRandom from '../src/brain-even.js';
 
 console.log('Welcome to the Brain Games!');
 const userName = takeUserInput('May I have your name? ');
