@@ -16,7 +16,7 @@ while (isRightAnswer) {
     const divisionRemainder = randomNumber % 2;
 
     if (answer !== 'yes' || answer !== 'no') {
-        console.log(`${answer} is wrong answer ;(.`);
+        console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
         console.log(`Let\`s try again, ${userName}`);
         isRightAnswer = false;
     }
