@@ -5,6 +5,4 @@ const takeUserInput = (userQuestion) => {
     return input;
 };
 
-const getRandom = (max) => Math.floor(Math.random() * max);
-
-export { takeUserInput, getRandom };
+export default takeUserInput;
