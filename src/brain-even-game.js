@@ -14,8 +14,7 @@ const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
     console.log(`Let\`s try again, ${userName}`);
 };
 
-const guessEvenOrNot = (userName) => {
-    const endGameCounter = 3;
+const guessEvenOrNot = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
 
