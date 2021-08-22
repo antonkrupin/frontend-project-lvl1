@@ -5,4 +5,4 @@
 ### Status Badge - ESlint Check
 [![Node.js CI](https://github.com/antonkrupin/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg?branch=main)](https://github.com/antonkrupin/frontend-project-lvl1/actions/workflows/nodejs.yml)
 ### Example of work
-[![asciicast](https://asciinema.org/a/voeMWepKcVXfNINgpQGOSxegR.svg)](https://asciinema.org/a/voeMWepKcVXfNINgpQGOSxegR)
+[![asciicast](https://asciinema.org/a/MsI63Wxd9wdo41Slank4kSgiC.svg)](https://asciinema.org/a/MsI63Wxd9wdo41Slank4kSgiC)
