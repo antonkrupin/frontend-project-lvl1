@@ -6,3 +6,4 @@
 [![Node.js CI](https://github.com/antonkrupin/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg?branch=main)](https://github.com/antonkrupin/frontend-project-lvl1/actions/workflows/nodejs.yml)
 ### Example of work
 [![asciicast](https://asciinema.org/a/voeMWepKcVXfNINgpQGOSxegR.svg)](https://asciinema.org/a/voeMWepKcVXfNINgpQGOSxegR)
+<script id="asciicast-voeMWepKcVXfNINgpQGOSxegR" src="https://asciinema.org/a/voeMWepKcVXfNINgpQGOSxegR.js" async></script>
