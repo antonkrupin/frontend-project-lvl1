@@ -1,7 +1,9 @@
 import takeUserInput from './cli.js';
 
+// генерирует случайное целое число
 const getRandom = (max) => Math.floor(Math.random() * max);
 
+// проверка на правильность ответа
 const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
     if (userAnswer === defaultAnswer) {
         return true;
@@ -9,6 +11,7 @@ const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
     return false;
 };
 
+// вывод сообщения в случае не верного ответа
 const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
     console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
     console.log(`Let\`s try again, ${userName}`);
