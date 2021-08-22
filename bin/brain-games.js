@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import takeUserInput from '../src/cli.js';
+import greetUser from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-console.log(`Hello, ${takeUserInput('May I have your name? ')}!`);
+greetUser();
