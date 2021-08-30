@@ -8,11 +8,18 @@ const getRandom = (max) => Math.floor(Math.random() * max);
 const getExpression = () => {
     const expressionsSignArray = ['+', '-', '*'];
     const expressionNumber = getRandom(3);
-    const firstNumber = getRandom(100);
+    /* const firstNumber = getRandom(100);
     const secondNumber = getRandom(100);
     const expressionSign = expressionsSignArray[expressionNumber];
-    const expression = `${firstNumber} ${expressionSign} ${secondNumber}`;
-    return [firstNumber, secondNumber, expressionSign, expression];
+    const expression = `${firstNumber} ${expressionSign} ${secondNumber}`; */
+    const expression = {
+        firstNumber: getRandom(100),
+        secondNumber: getRandom(100),
+        sign: expressionsSignArray[expressionNumber],
+        expression: `${this.firstNumber} ${this.sign} ${this.secondNumber}`,
+    };
+    return expression;
+    /* return [firstNumber, secondNumber, expressionSign, expression]; */
 };
 
 const giveRightAnswer = (userName, endGameCounter = 3) => {
@@ -32,25 +39,25 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
 
     while (isRightAnswer) {
         const expression = getExpression();
-        console.log(`Question: ${expression[3]}`);
+        console.log(`Question: ${expression.expression}`);
         const answer = Number(takeUserInput());
 
-        switch (expression[2]) {
+        switch (expression.sign) {
         case '+':
         {
-            const resultPlus = expression[0] + expression[1];
+            const resultPlus = expression.firstNumber + expression.secondNumber;
             checkUserAnswer(resultPlus, answer);
             break;
         }
         case '-':
         {
-            const resultMinus = expression[0] - expression[1];
+            const resultMinus = expression.firstNumber - expression.secondNumber;
             checkUserAnswer(resultMinus, answer);
             break;
         }
         case '*':
         {
-            const resultMultiplication = expression[0] * expression[1];
+            const resultMultiplication = expression.firstNumber * expression.secondNumber;
             checkUserAnswer(resultMultiplication, answer);
             break;
         }
