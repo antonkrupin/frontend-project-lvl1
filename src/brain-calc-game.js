@@ -16,7 +16,7 @@ const getExpression = () => {
     return expression;
 };
 
-const giveRightAnswer = (userName, endGameCounter = 3) => {
+const giveExpressionResult = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
     // проверка правильности ответа
@@ -64,4 +64,4 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
     }
 };
 
-export default giveRightAnswer;
+export default giveExpressionResult;
