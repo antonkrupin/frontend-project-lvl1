@@ -9,7 +9,9 @@ const getExpression = () => {
         firstNumber: getRandom(100),
         secondNumber: getRandom(100),
         sign: expressionsSignArray[expressionNumber],
-        expression: () => `${expression.firstNumber} ${expression.sign} ${expression.secondNumber}`,
+        expression() {
+            return `${this.firstNumber} ${this.sign} ${this.secondNumber}`;
+        },
     };
     return expression;
 };
