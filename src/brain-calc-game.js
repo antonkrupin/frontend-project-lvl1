@@ -3,14 +3,6 @@ import takeUserInput from './cli.js';
 // генерирует случайное целое число
 const getRandom = (max) => Math.floor(Math.random() * max);
 
-// проверка на правильность ответа
-const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
-    if (userAnswer === defaultAnswer) {
-        return true;
-    }
-    return false;
-};
-
 // вывод сообщения в случае не верного ответа
 const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
     console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
@@ -38,38 +30,44 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
 
         switch (expression[3]) {
         case '+':
+        {
             const resultPlus = expression[0] + expression[1];
             if (resultPlus === answer) {
                 console.log(`Your answer: ${answer}`);
                 console.log('Correct!');
                 rightAnswerCounter += 1;
             } else {
-                console.log(`'${answer}' is wrong ;(. Correct answer was '${resultPlus}'`);
+                userWrongAnswerOutput(userName, answer, resultPlus);
                 isRightAnswer = false;
             }
             break;
+        }
         case '-':
+        {
             const resultMinus = expression[0] - expression[1];
             if (resultMinus === answer) {
                 console.log(`Your answer: ${answer}`);
                 console.log('Correct!');
                 rightAnswerCounter += 1;
             } else {
-                console.log(`'${answer}' is wrong ;(. Correct answer was '${resultMinus}'`);
+                userWrongAnswerOutput(userName, answer, resultMinus);
                 isRightAnswer = false;
             }
             break;
+        }
         case '*':
-            let resultMultiplication = expression[0] * expression[1];
+        {
+            const resultMultiplication = expression[0] * expression[1];
             if (resultMultiplication === answer) {
                 console.log(`Your answer: ${answer}`);
                 console.log('Correct!');
                 rightAnswerCounter += 1;
             } else {
-                console.log(`'${answer}' is wrong ;(. Correct answer was '${resultMultiplication}'`);
+                userWrongAnswerOutput(userName, answer, resultMultiplication);
                 isRightAnswer = false;
             }
             break;
+        }
         default:
             console.log('test');
         }
