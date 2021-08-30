@@ -6,12 +6,13 @@ const getRandom = (max) => Math.floor(Math.random() * max);
 
 // генерация выражения для пользователя
 const getExpression = () => {
-    const expressionsArray = ['+', '-', '*'];
+    const expressionsSignArray = ['+', '-', '*'];
     const expressionNumber = getRandom(3);
     const firstNumber = getRandom(100);
     const secondNumber = getRandom(100);
-    const expression = `${firstNumber} ${expressionsArray[expressionNumber]} ${secondNumber}`;
-    return [firstNumber, secondNumber, expression, expressionsArray[expressionNumber]];
+    const expressionSign = expressionsSignArray[expressionNumber];
+    const expression = `${firstNumber} ${expressionSign} ${secondNumber}`;
+    return [firstNumber, secondNumber, expression, expressionSign];
 };
 
 const giveRightAnswer = (userName, endGameCounter = 3) => {
