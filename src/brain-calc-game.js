@@ -17,7 +17,6 @@ const getExpression = () => {
 const giveRightAnswer = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
-
     // проверка правильности ответа
     const checkUserAnswer = (result, answer) => {
         if (result === answer) {
@@ -28,7 +27,6 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
             isRightAnswer = false;
         }
     };
-
     while (isRightAnswer) {
         const expression = getExpression();
         console.log(`Question: ${expression.expression()}`);
@@ -57,7 +55,6 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
             // do nothing;
             break;
         }
-
         if (rightAnswerCounter === endGameCounter) {
             isRightAnswer = false;
             console.log(`Congratulations, ${userName}!`);
