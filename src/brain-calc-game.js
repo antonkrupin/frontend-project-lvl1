@@ -8,15 +8,11 @@ const getRandom = (max) => Math.floor(Math.random() * max);
 const getExpression = () => {
     const expressionsSignArray = ['+', '-', '*'];
     const expressionNumber = getRandom(3);
-    /* const firstNumber = getRandom(100);
-    const secondNumber = getRandom(100);
-    const expressionSign = expressionsSignArray[expressionNumber];
-    const expression = `${firstNumber} ${expressionSign} ${secondNumber}`; */
     const expression = {
         firstNumber: getRandom(100),
         secondNumber: getRandom(100),
         sign: expressionsSignArray[expressionNumber],
-        expression: `${this.firstNumber} ${this.sign} ${this.secondNumber}`,
+        expression: () => `${expression.firstNumber} ${expression.sign} ${expression.secondNumber}`,
     };
     return expression;
     /* return [firstNumber, secondNumber, expressionSign, expression]; */
@@ -39,7 +35,7 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
 
     while (isRightAnswer) {
         const expression = getExpression();
-        console.log(`Question: ${expression.expression}`);
+        console.log(`Question: ${expression.expression()}`);
         const answer = Number(takeUserInput());
 
         switch (expression.sign) {
