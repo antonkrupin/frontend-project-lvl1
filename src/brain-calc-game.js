@@ -1,13 +1,8 @@
 import takeUserInput from './cli.js';
+import { userWrongAnswerOutput } from './index.js';
 
 // генерирует случайное целое число
 const getRandom = (max) => Math.floor(Math.random() * max);
-
-// вывод сообщения в случае не верного ответа
-const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
-    console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
-    console.log(`Let\`s try again, ${userName}`);
-};
 
 // генерация выражения для пользователя
 const getExpression = () => {
