@@ -12,19 +12,16 @@ const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
 const guessEvenOrNot = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
-
     while (isRightAnswer) {
         const randomNumber = getRandom(1000);
         console.log(`Question: ${randomNumber}`);
         const answer = takeUserInput();
         const divisionRemainder = randomNumber % 2;
-
         if (answer !== 'yes' && answer !== 'no') {
             console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
             console.log(`Let\`s try again, ${userName}`);
             isRightAnswer = false;
         }
-
         if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
             || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
             if (answer === 'yes') {
@@ -35,14 +32,12 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
                 isRightAnswer = false;
             }
         }
-
         if ((checkUserAnswer(answer) && divisionRemainder === 0)
             || (checkUserAnswer(answer, 'no') && divisionRemainder !== 0)) {
             userRightAnswerOutput(answer);
             rightAnswerCounter += 1;
             isRightAnswer = true;
         }
-
         if (rightAnswerCounter === endGameCounter) {
             console.log(`Congratulations, ${userName}!`);
             isRightAnswer = false;
