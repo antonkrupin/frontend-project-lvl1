@@ -64,7 +64,8 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
             break;
         }
         default:
-            console.log('test');
+            // do nothing;
+            break;
         }
 
         if (rightAnswerCounter === endGameCounter) {
