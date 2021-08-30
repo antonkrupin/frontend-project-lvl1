@@ -12,7 +12,7 @@ const getExpression = () => {
     const secondNumber = getRandom(100);
     const expressionSign = expressionsSignArray[expressionNumber];
     const expression = `${firstNumber} ${expressionSign} ${secondNumber}`;
-    return [firstNumber, secondNumber, expression, expressionSign];
+    return [firstNumber, secondNumber, expressionSign, expression];
 };
 
 const giveRightAnswer = (userName, endGameCounter = 3) => {
@@ -32,10 +32,10 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
 
     while (isRightAnswer) {
         const expression = getExpression();
-        console.log(`Question: ${expression[2]}`);
+        console.log(`Question: ${expression[3]}`);
         const answer = Number(takeUserInput());
 
-        switch (expression[3]) {
+        switch (expression[2]) {
         case '+':
         {
             const resultPlus = expression[0] + expression[1];
