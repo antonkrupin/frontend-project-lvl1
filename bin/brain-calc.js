@@ -2,5 +2,5 @@
 import greetUser from '../src/index.js';
 
 const userName = greetUser();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+console.log('What is the result of the expression?');
 
