@@ -24,49 +24,59 @@ const getExpression = () => {
     const firstNumber = getRandom(100);
     const secondNumber = getRandom(100);
     const expression = `${firstNumber} ${expressionsArray[expressionNumber]} ${secondNumber}`;
-    return expression;
+    return [firstNumber, secondNumber, expression, expressionsArray[expressionNumber]];
 };
 
 const giveRightAnswer = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
 
-    getExpression();
-
     while (isRightAnswer) {
-        const randomNumber = getRandom(1000);
-        console.log(`Question: ${randomNumber}`);
-        const answer = takeUserInput();
-        const divisionRemainder = randomNumber % 2;
+        const expression = getExpression();
+        console.log(`Question: ${expression[2]}`);
+        const answer = Number(takeUserInput());
 
-        if (answer !== 'yes' && answer !== 'no') {
-            console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
-            console.log(`Let\`s try again, ${userName}`);
-            isRightAnswer = false;
-        }
-
-        if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
-            || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
-            if (answer === 'yes') {
-                userWrongAnswerOutput(userName, answer);
-                isRightAnswer = false;
+        switch (expression[3]) {
+        case '+':
+            const resultPlus = expression[0] + expression[1];
+            if (resultPlus === answer) {
+                console.log(`Your answer: ${answer}`);
+                console.log('Correct!');
+                rightAnswerCounter += 1;
             } else {
-                userWrongAnswerOutput(userName, answer, 'yes');
+                console.log(`'${answer}' is wrong ;(. Correct answer was '${resultPlus}'`);
                 isRightAnswer = false;
             }
-        }
-
-        if ((checkUserAnswer(answer) && divisionRemainder === 0)
-            || (checkUserAnswer(answer, 'no') && divisionRemainder !== 0)) {
-            console.log(`Your answer: ${answer}`);
-            console.log('Correct!');
-            rightAnswerCounter += 1;
-            isRightAnswer = true;
+            break;
+        case '-':
+            const resultMinus = expression[0] - expression[1];
+            if (resultMinus === answer) {
+                console.log(`Your answer: ${answer}`);
+                console.log('Correct!');
+                rightAnswerCounter += 1;
+            } else {
+                console.log(`'${answer}' is wrong ;(. Correct answer was '${resultMinus}'`);
+                isRightAnswer = false;
+            }
+            break;
+        case '*':
+            let resultMultiplication = expression[0] * expression[1];
+            if (resultMultiplication === answer) {
+                console.log(`Your answer: ${answer}`);
+                console.log('Correct!');
+                rightAnswerCounter += 1;
+            } else {
+                console.log(`'${answer}' is wrong ;(. Correct answer was '${resultMultiplication}'`);
+                isRightAnswer = false;
+            }
+            break;
+        default:
+            console.log('test');
         }
 
         if (rightAnswerCounter === endGameCounter) {
-            console.log(`Congratulations, ${userName}!`);
             isRightAnswer = false;
+            console.log(`Congratulations, ${userName}!`);
         }
     }
 };
