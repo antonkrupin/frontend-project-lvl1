@@ -17,6 +17,16 @@ const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
     console.log(`Let\`s try again, ${userName}`);
 };
 
+// генерация выражения для пользователя
+const getExpression = () => {
+    const expressionsArray = ['+', '-', '*'];
+    const expressionNumber = getRandom(3);
+    const firstNumber = getRandom(100);
+    const secondNumber = getRandom(100);
+    const expression = `${firstNumber} ${expressionsArray[expressionNumber]} ${secondNumber}`;
+    return expression;
+};
+
 const guessEvenOrNot = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
