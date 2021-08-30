@@ -1,5 +1,5 @@
 import takeUserInput from './cli.js';
-import { userWrongAnswerOutput } from './index.js';
+import { userRightAnswerOutput, userWrongAnswerOutput } from './index.js';
 
 // генерирует случайное целое число
 const getRandom = (max) => Math.floor(Math.random() * max);
@@ -41,8 +41,7 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
 
         if ((checkUserAnswer(answer) && divisionRemainder === 0)
             || (checkUserAnswer(answer, 'no') && divisionRemainder !== 0)) {
-            console.log(`Your answer: ${answer}`);
-            console.log('Correct!');
+            userRightAnswerOutput(answer);
             rightAnswerCounter += 1;
             isRightAnswer = true;
         }
