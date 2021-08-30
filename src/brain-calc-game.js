@@ -19,6 +19,17 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
 
+    // проверка правильности ответа
+    const checkUserAnswer = (result, answer) => {
+        if (result === answer) {
+            userRightAnswerOutput(answer);
+            rightAnswerCounter += 1;
+        } else {
+            userWrongAnswerOutput(userName, answer, result);
+            isRightAnswer = false;
+        }
+    };
+
     while (isRightAnswer) {
         const expression = getExpression();
         console.log(`Question: ${expression[2]}`);
@@ -28,37 +39,19 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
         case '+':
         {
             const resultPlus = expression[0] + expression[1];
-            if (resultPlus === answer) {
-                userRightAnswerOutput(answer);
-                rightAnswerCounter += 1;
-            } else {
-                userWrongAnswerOutput(userName, answer, resultPlus);
-                isRightAnswer = false;
-            }
+            checkUserAnswer(resultPlus, answer);
             break;
         }
         case '-':
         {
             const resultMinus = expression[0] - expression[1];
-            if (resultMinus === answer) {
-                userRightAnswerOutput(answer);
-                rightAnswerCounter += 1;
-            } else {
-                userWrongAnswerOutput(userName, answer, resultMinus);
-                isRightAnswer = false;
-            }
+            checkUserAnswer(resultMinus, answer);
             break;
         }
         case '*':
         {
             const resultMultiplication = expression[0] * expression[1];
-            if (resultMultiplication === answer) {
-                userRightAnswerOutput(answer);
-                rightAnswerCounter += 1;
-            } else {
-                userWrongAnswerOutput(userName, answer, resultMultiplication);
-                isRightAnswer = false;
-            }
+            checkUserAnswer(resultMultiplication, answer);
             break;
         }
         default:
