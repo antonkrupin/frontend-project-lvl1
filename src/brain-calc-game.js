@@ -27,9 +27,11 @@ const getExpression = () => {
     return expression;
 };
 
-const guessEvenOrNot = (userName, endGameCounter = 3) => {
+const giveRightAnswer = (userName, endGameCounter = 3) => {
     let rightAnswerCounter = 0;
     let isRightAnswer = true;
+
+    getExpression();
 
     while (isRightAnswer) {
         const randomNumber = getRandom(1000);
@@ -69,4 +71,4 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
     }
 };
 
-export default guessEvenOrNot;
+export default giveRightAnswer;
