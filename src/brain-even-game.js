@@ -1,7 +1,5 @@
 import takeUserInput from './cli.js';
-
-// генерирует случайное целое число
-const getRandom = (max) => Math.floor(Math.random() * max);
+import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
 
 // проверка на правильность ответа
 const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
@@ -9,12 +7,6 @@ const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
         return true;
     }
     return false;
-};
-
-// вывод сообщения в случае не верного ответа
-const userWrongAnswerOutput = (userName, userAnswer, correctAnswer = 'no') => {
-    console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
-    console.log(`Let\`s try again, ${userName}`);
 };
 
 const guessEvenOrNot = (userName, endGameCounter = 3) => {
@@ -36,7 +28,7 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
         if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
             || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
             if (answer === 'yes') {
-                userWrongAnswerOutput(userName, answer);
+                userWrongAnswerOutput(userName, answer, 'no');
                 isRightAnswer = false;
             } else {
                 userWrongAnswerOutput(userName, answer, 'yes');
@@ -46,8 +38,7 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
 
         if ((checkUserAnswer(answer) && divisionRemainder === 0)
             || (checkUserAnswer(answer, 'no') && divisionRemainder !== 0)) {
-            console.log(`Your answer: ${answer}`);
-            console.log('Correct!');
+            userRightAnswerOutput(answer);
             rightAnswerCounter += 1;
             isRightAnswer = true;
         }
