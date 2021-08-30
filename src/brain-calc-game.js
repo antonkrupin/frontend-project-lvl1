@@ -1,8 +1,5 @@
 import takeUserInput from './cli.js';
-import { userRightAnswerOutput, userWrongAnswerOutput } from './index.js';
-
-// генерирует случайное целое число
-const getRandom = (max) => Math.floor(Math.random() * max);
+import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
 
 // генерация выражения для пользователя
 const getExpression = () => {
