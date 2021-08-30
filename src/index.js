@@ -7,4 +7,10 @@ const greetUser = () => {
     return userName;
 };
 
-export default greetUser;
+// вывод сообщения в случае не верного ответа
+const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
+    console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
+    console.log(`Let\`s try again, ${userName}`);
+};
+
+export { greetUser, userWrongAnswerOutput };
