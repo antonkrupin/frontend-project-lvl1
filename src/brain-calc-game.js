@@ -15,7 +15,6 @@ const getExpression = () => {
         expression: () => `${expression.firstNumber} ${expression.sign} ${expression.secondNumber}`,
     };
     return expression;
-    /* return [firstNumber, secondNumber, expressionSign, expression]; */
 };
 
 const giveRightAnswer = (userName, endGameCounter = 3) => {
