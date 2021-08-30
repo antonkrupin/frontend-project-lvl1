@@ -1,5 +1,5 @@
 import takeUserInput from './cli.js';
-import { userWrongAnswerOutput } from './index.js';
+import { userRightAnswerOutput, userWrongAnswerOutput } from './index.js';
 
 // генерирует случайное целое число
 const getRandom = (max) => Math.floor(Math.random() * max);
@@ -29,8 +29,7 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
         {
             const resultPlus = expression[0] + expression[1];
             if (resultPlus === answer) {
-                console.log(`Your answer: ${answer}`);
-                console.log('Correct!');
+                userRightAnswerOutput(answer);
                 rightAnswerCounter += 1;
             } else {
                 userWrongAnswerOutput(userName, answer, resultPlus);
@@ -42,8 +41,7 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
         {
             const resultMinus = expression[0] - expression[1];
             if (resultMinus === answer) {
-                console.log(`Your answer: ${answer}`);
-                console.log('Correct!');
+                userRightAnswerOutput(answer);
                 rightAnswerCounter += 1;
             } else {
                 userWrongAnswerOutput(userName, answer, resultMinus);
@@ -55,8 +53,7 @@ const giveRightAnswer = (userName, endGameCounter = 3) => {
         {
             const resultMultiplication = expression[0] * expression[1];
             if (resultMultiplication === answer) {
-                console.log(`Your answer: ${answer}`);
-                console.log('Correct!');
+                userRightAnswerOutput(answer);
                 rightAnswerCounter += 1;
             } else {
                 userWrongAnswerOutput(userName, answer, resultMultiplication);
