@@ -22,14 +22,6 @@ const isCorrectAnswer = (answer, userName) => {
     return true;
 };
 
-// проверка на правильность ответа
-const checkUserAnswer = (userAnswer, defaultAnswer) => {
-    if (userAnswer === defaultAnswer) {
-        return true;
-    }
-    return false;
-};
-
 // проверка на 0
 const isZeroDivision = (divisionRemainder, answer, userName) => {
     if (divisionRemainder === 0 && answer === 'yes') {
