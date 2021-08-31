@@ -29,11 +29,10 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
             || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
             if (answer === 'yes') {
                 userWrongAnswerOutput(userName, answer, 'no');
-                isRightAnswer = false;
             } else {
                 userWrongAnswerOutput(userName, answer, 'yes');
-                isRightAnswer = false;
             }
+            isRightAnswer = false;
         }
 
         if ((checkUserAnswer(answer) && divisionRemainder === 0)
