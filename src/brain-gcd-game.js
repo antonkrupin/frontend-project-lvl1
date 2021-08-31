@@ -3,7 +3,7 @@ import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index
 
 const findNOD = (number1, number2) => {
     if (number2 === 0) {
-        return number1;
+        return Math.abs(number1);
     }
     return findNOD(number2, number1 % number2);
 };
