@@ -4,7 +4,7 @@ import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index
 // генерация выражения для пользователя
 const generateExpression = () => {
     const expressionsSignArray = ['+', '-', '*'];
-    const expressionNumber = getRandom(3);
+    const expressionNumber = getRandom(expressionsSignArray.length);
     const expression = {
         firstNumber: getRandom(100),
         secondNumber: getRandom(100),
