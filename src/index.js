@@ -21,4 +21,4 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
 };
 
 // генерирует случайное целое число
-export const getRandom = (max) => Math.floor(Math.random() * max);
+export const getRandom = (max) => Math.ceil(Math.random() * max);
