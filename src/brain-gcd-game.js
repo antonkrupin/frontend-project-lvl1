@@ -19,7 +19,7 @@ const isGameEnd = (userName, endGameCounter) => {
 };
 
 const giveNODResult = (userName, endGameCounter = 3) => {
-    while (isRightAnswer && endGameCounter !== 0) {
+    while (isRightAnswer) {
         const firstNumber = getRandom(100);
         const secondNumber = getRandom(100);
         console.log(`Question: ${firstNumber} ${secondNumber}`);
