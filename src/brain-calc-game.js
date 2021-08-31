@@ -1,5 +1,7 @@
 import takeUserInput from './cli.js';
-import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
+import {
+    userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
+} from './index.js';
 
 // генерация выражения для пользователя
 const generateExpression = () => {
@@ -17,6 +19,7 @@ const generateExpression = () => {
 };
 
 let rightAnswerCounter = 0;
+let endOfGame = true;
 let isRightAnswer = true;
 
 // проверка правильности ответа
@@ -30,16 +33,8 @@ const checkUserAnswer = (result, answer, userName) => {
     }
 };
 
-// проверка окончания игры
-const isGameEnd = (userName, endGameCounter) => {
-    if (rightAnswerCounter === endGameCounter) {
-        isRightAnswer = false;
-        console.log(`Congratulations, ${userName}!`);
-    }
-};
-
 const giveExpressionResult = (userName, endGameCounter = 3) => {
-    while (isRightAnswer) {
+    while (isRightAnswer && endOfGame) {
         const expression = generateExpression();
         console.log(`Question: ${expression.expression()}`);
         const answer = Number(takeUserInput());
@@ -68,7 +63,7 @@ const giveExpressionResult = (userName, endGameCounter = 3) => {
             break;
         }
 
-        isGameEnd(userName, endGameCounter);
+        endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
     }
 };
 
