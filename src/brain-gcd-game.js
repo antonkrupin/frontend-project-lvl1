@@ -3,10 +3,8 @@ import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index
 
 const findNOD = (number1, number2) => {
     let nod = 1;
-    let nodCounter = 0;
-    if (number1 < number2) {
-        nodCounter = number1;
-    } else {
+    let nodCounter = number1;
+    if (number1 > number2) {
         nodCounter = number2;
     }
 
