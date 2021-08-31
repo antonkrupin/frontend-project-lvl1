@@ -24,8 +24,10 @@ const isCorrectAnswer = (answer, userName) => {
 
 // проверка на 0
 const isZeroDivision = (divisionRemainder, answer, userName) => {
-    if ((divisionRemainder === 0 && answer === 'yes')
-        || (divisionRemainder !== 0 && answer === 'no')) {
+    if (divisionRemainder === 0 && answer === 'yes') {
+        userRightAnswerOutput(answer);
+        rightAnswerCounter += 1;
+    } else if (divisionRemainder !== 0 && answer === 'no') {
         userRightAnswerOutput(answer);
         rightAnswerCounter += 1;
     } else {
