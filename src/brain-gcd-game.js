@@ -1,7 +1,10 @@
 import takeUserInput from './cli.js';
-import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
+import {
+    userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
+} from './index.js';
 
 let isRightAnswer = true;
+let endOfGame = true;
 let rightAnswerCounter = 0;
 
 const findNOD = (number1, number2) => {
@@ -11,15 +14,8 @@ const findNOD = (number1, number2) => {
     return findNOD(number2, number1 % number2);
 };
 
-const isGameEnd = (userName, endGameCounter) => {
-    if (rightAnswerCounter === endGameCounter) {
-        isRightAnswer = false;
-        console.log(`Congratulations, ${userName}!`);
-    }
-};
-
 const giveNODResult = (userName, endGameCounter = 3) => {
-    while (isRightAnswer) {
+    while (isRightAnswer && endOfGame) {
         const firstNumber = getRandom(100);
         const secondNumber = getRandom(100);
         console.log(`Question: ${firstNumber} ${secondNumber}`);
@@ -34,7 +30,7 @@ const giveNODResult = (userName, endGameCounter = 3) => {
             isRightAnswer = false;
         }
 
-        isGameEnd(userName, endGameCounter);
+        endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
     }
 };
 
