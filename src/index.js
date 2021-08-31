@@ -22,3 +22,14 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
 
 // генерирует случайное целое число
 export const getRandom = (max) => Math.floor(Math.random() * max);
+
+// проверка завершения игры
+export const isGameEnd = (rightAnswerCounter, endGameCounter, userName) => {
+    let gameEnd = false;
+    if (rightAnswerCounter === endGameCounter) {
+        console.log(`Congratulations, ${userName}!`);
+        gameEnd = true;
+    }
+
+    return gameEnd;
+};
