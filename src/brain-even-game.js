@@ -18,7 +18,7 @@ const isCorrectAnswer = (answer, userName) => {
     return true;
 };
 
-// проверка на 0
+// проверка остатка от деления
 const isZeroDivision = (divisionRemainder, answer, userName) => {
     if (divisionRemainder === 0 && answer === 'yes') {
         userRightAnswerOutput(answer);
