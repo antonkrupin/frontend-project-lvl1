@@ -25,6 +25,28 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
             isRightAnswer = false;
         }
 
+        if (divisionRemainder === 0) {
+            if (checkUserAnswer(answer, 'yes')) {
+                userRightAnswerOutput(answer);
+                rightAnswerCounter += 1;
+                isRightAnswer = true;
+            } else {
+                userWrongAnswerOutput(userName, answer, 'yes');
+                isRightAnswer = false;
+            }
+        }
+
+        if (divisionRemainder !== 0) {
+            if (checkUserAnswer(answer, 'no')) {
+                userRightAnswerOutput(answer);
+                rightAnswerCounter += 1;
+                isRightAnswer = true;
+            } else {
+                userWrongAnswerOutput(userName, answer, 'no');
+                isRightAnswer = false;
+            }
+        }
+        /*
         if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
             || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
             if (answer === 'yes') {
@@ -41,6 +63,7 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
             rightAnswerCounter += 1;
             isRightAnswer = true;
         }
+        */
 
         if (rightAnswerCounter === endGameCounter) {
             console.log(`Congratulations, ${userName}!`);
