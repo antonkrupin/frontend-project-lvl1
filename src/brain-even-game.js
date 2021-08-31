@@ -29,7 +29,6 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
             if (checkUserAnswer(answer, 'yes')) {
                 userRightAnswerOutput(answer);
                 rightAnswerCounter += 1;
-                isRightAnswer = true;
             } else {
                 userWrongAnswerOutput(userName, answer, 'yes');
                 isRightAnswer = false;
@@ -40,7 +39,6 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
             if (checkUserAnswer(answer, 'no')) {
                 userRightAnswerOutput(answer);
                 rightAnswerCounter += 1;
-                isRightAnswer = true;
             } else {
                 userWrongAnswerOutput(userName, answer, 'no');
                 isRightAnswer = false;
