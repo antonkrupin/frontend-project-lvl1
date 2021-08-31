@@ -32,24 +32,19 @@ const checkUserAnswer = (userAnswer, defaultAnswer) => {
 
 // проверка на 0
 const isZeroDivision = (divisionRemainder, answer, userName) => {
-    if (divisionRemainder === 0) {
-        if (checkUserAnswer(answer, 'yes')) {
-            userRightAnswerOutput(answer);
-            rightAnswerCounter += 1;
-        }
+    if (divisionRemainder === 0 && answer === 'yes') {
+        userRightAnswerOutput(answer);
+        rightAnswerCounter += 1;
+    } else if (divisionRemainder !== 0 && answer === 'no') {
+        userRightAnswerOutput(answer);
+        rightAnswerCounter += 1;
     } else {
-        userWrongAnswerOutput(userName, answer, 'yes');
-        isRightAnswer = false;
-    }
-
-    if (divisionRemainder !== 0) {
-        if (checkUserAnswer(answer, 'no')) {
-            userRightAnswerOutput(answer);
-            rightAnswerCounter += 1;
-        } else {
+        if (answer === 'yes') {
             userWrongAnswerOutput(userName, answer, 'no');
-            isRightAnswer = false;
+        } else {
+            userWrongAnswerOutput(userName, answer, 'yes');
         }
+        isRightAnswer = false;
     }
 };
 
@@ -65,26 +60,6 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
         }
 
         isZeroDivision(divisionRemainder, answer, userName);
-
-        /* if (divisionRemainder === 0) {
-            if (checkUserAnswer(answer, 'yes')) {
-                userRightAnswerOutput(answer);
-                rightAnswerCounter += 1;
-            } else {
-                userWrongAnswerOutput(userName, answer, 'yes');
-                isRightAnswer = false;
-            }
-        }
-
-        if (divisionRemainder !== 0) {
-            if (checkUserAnswer(answer, 'no')) {
-                userRightAnswerOutput(answer);
-                rightAnswerCounter += 1;
-            } else {
-                userWrongAnswerOutput(userName, answer, 'no');
-                isRightAnswer = false;
-            }
-        } */
 
         isGameEnd(userName, endGameCounter);
     }
