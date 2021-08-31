@@ -1,15 +1,11 @@
 import takeUserInput from './cli.js';
-import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
+import {
+    userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
+} from './index.js';
 
 let rightAnswerCounter = 0;
+let endOfGame = true;
 let isRightAnswer = true;
-
-const isGameEnd = (userName, endGameCounter) => {
-    if (rightAnswerCounter === endGameCounter) {
-        isRightAnswer = false;
-        console.log(`Congratulations, ${userName}!`);
-    }
-};
 
 // проверка корректности ввода ответа
 const isCorrectAnswer = (answer, userName) => {
@@ -41,7 +37,7 @@ const isZeroDivision = (divisionRemainder, answer, userName) => {
 };
 
 const guessEvenOrNot = (userName, endGameCounter = 3) => {
-    while (isRightAnswer) {
+    while (isRightAnswer && endOfGame) {
         const randomNumber = getRandom(1000);
         console.log(`Question: ${randomNumber}`);
         const answer = takeUserInput();
@@ -53,7 +49,7 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
 
         isZeroDivision(divisionRemainder, answer, userName);
 
-        isGameEnd(userName, endGameCounter);
+        endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
     }
 };
 
