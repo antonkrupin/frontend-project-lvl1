@@ -40,11 +40,6 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
         if (!isCorrectAnswer(answer, userName)) {
             break;
         }
-        /* if (answer !== 'yes' && answer !== 'no') {
-            console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
-            console.log(`Let\`s try again, ${userName}`);
-            isRightAnswer = false;
-        } */
 
         if (divisionRemainder === 0) {
             if (checkUserAnswer(answer, 'yes')) {
