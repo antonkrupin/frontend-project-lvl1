@@ -30,6 +30,14 @@ const checkUserAnswer = (result, answer, userName) => {
     }
 };
 
+// проверка окончания игры
+const isGameEnd = (userName, endGameCounter) => {
+    if (rightAnswerCounter === endGameCounter) {
+        isRightAnswer = false;
+        console.log(`Congratulations, ${userName}!`);
+    }
+};
+
 const giveExpressionResult = (userName, endGameCounter = 3) => {
     while (isRightAnswer) {
         const expression = generateExpression();
@@ -59,10 +67,8 @@ const giveExpressionResult = (userName, endGameCounter = 3) => {
             // do nothing;
             break;
         }
-        if (rightAnswerCounter === endGameCounter) {
-            isRightAnswer = false;
-            console.log(`Congratulations, ${userName}!`);
-        }
+
+        isGameEnd(userName, endGameCounter);
     }
 };
 
