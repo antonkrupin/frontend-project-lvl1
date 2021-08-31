@@ -23,8 +23,8 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
 // генерирует случайное целое число
 export const getRandom = (max) => Math.floor(Math.random() * max);
 
-export const isGameEndTest = (counter, userName) => {
-    if (counter === 3) {
+export const isGameEndTest = (counter, userName, endGameCounter) => {
+    if (counter === endGameCounter) {
         console.log(`Congratulations, ${userName}!`);
         return false;
     }
