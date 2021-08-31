@@ -2,7 +2,7 @@ import takeUserInput from './cli.js';
 import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
 
 // генерация выражения для пользователя
-const getExpression = () => {
+const generateExpression = () => {
     const expressionsSignArray = ['+', '-', '*'];
     const expressionNumber = getRandom(3);
     const expression = {
@@ -30,7 +30,7 @@ const giveExpressionResult = (userName, endGameCounter = 3) => {
         }
     };
     while (isRightAnswer) {
-        const expression = getExpression();
+        const expression = generateExpression();
         console.log(`Question: ${expression.expression()}`);
         const answer = Number(takeUserInput());
 
