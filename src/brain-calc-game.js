@@ -16,19 +16,21 @@ const generateExpression = () => {
     return expression;
 };
 
+let rightAnswerCounter = 0;
+let isRightAnswer = true;
+
+// проверка правильности ответа
+const checkUserAnswer = (result, answer, userName) => {
+    if (result === answer) {
+        userRightAnswerOutput(answer);
+        rightAnswerCounter += 1;
+    } else {
+        userWrongAnswerOutput(userName, answer, result);
+        isRightAnswer = false;
+    }
+};
+
 const giveExpressionResult = (userName, endGameCounter = 3) => {
-    let rightAnswerCounter = 0;
-    let isRightAnswer = true;
-    // проверка правильности ответа
-    const checkUserAnswer = (result, answer) => {
-        if (result === answer) {
-            userRightAnswerOutput(answer);
-            rightAnswerCounter += 1;
-        } else {
-            userWrongAnswerOutput(userName, answer, result);
-            isRightAnswer = false;
-        }
-    };
     while (isRightAnswer) {
         const expression = generateExpression();
         console.log(`Question: ${expression.expression()}`);
@@ -38,19 +40,19 @@ const giveExpressionResult = (userName, endGameCounter = 3) => {
         case '+':
         {
             const resultPlus = expression.firstNumber + expression.secondNumber;
-            checkUserAnswer(resultPlus, answer);
+            checkUserAnswer(resultPlus, answer, userName);
             break;
         }
         case '-':
         {
             const resultMinus = expression.firstNumber - expression.secondNumber;
-            checkUserAnswer(resultMinus, answer);
+            checkUserAnswer(resultMinus, answer, userName);
             break;
         }
         case '*':
         {
             const resultMultiplication = expression.firstNumber * expression.secondNumber;
-            checkUserAnswer(resultMultiplication, answer);
+            checkUserAnswer(resultMultiplication, answer, userName);
             break;
         }
         default:
