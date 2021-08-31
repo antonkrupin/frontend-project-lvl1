@@ -2,19 +2,10 @@ import takeUserInput from './cli.js';
 import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
 
 const findNOD = (number1, number2) => {
-    let nod = 1;
-    let nodCounter = number1;
-    if (number1 > number2) {
-        nodCounter = number2;
+    if (number2 === 0) {
+        return number1;
     }
-
-    for (let i = 1; i <= nodCounter; i += 1) {
-        if (number1 % i === 0 && number2 % i === 0) {
-            nod = i;
-        }
-    }
-
-    return nod;
+    return findNOD(number2, number1 % number2);
 };
 
 const giveNODResult = (userName, endGameCounter = 3) => {
