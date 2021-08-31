@@ -26,7 +26,7 @@ export const getRandom = (max) => Math.floor(Math.random() * max);
 export const isGameEndTest = (counter, userName) => {
     if (counter === 3) {
         console.log(`Congratulations, ${userName}!`);
-        return true;
+        return false;
     }
-    return false;
+    return true;
 };
