@@ -9,10 +9,17 @@ const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
     return false;
 };
 
-const guessEvenOrNot = (userName, endGameCounter = 3) => {
-    let rightAnswerCounter = 0;
-    let isRightAnswer = true;
+let rightAnswerCounter = 0;
+let isRightAnswer = true;
 
+const isGameEnd = (userName, endGameCounter) => {
+    if (rightAnswerCounter === endGameCounter) {
+        isRightAnswer = false;
+        console.log(`Congratulations, ${userName}!`);
+    }
+};
+
+const guessEvenOrNot = (userName, endGameCounter = 3) => {
     while (isRightAnswer) {
         const randomNumber = getRandom(1000);
         console.log(`Question: ${randomNumber}`);
@@ -44,6 +51,8 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
                 isRightAnswer = false;
             }
         }
+
+        isGameEnd(userName, endGameCounter);
         /*
         if ((checkUserAnswer(answer, 'no') && divisionRemainder === 0)
             || (checkUserAnswer(answer) && divisionRemainder !== 0)) {
@@ -63,10 +72,10 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
         }
         */
 
-        if (rightAnswerCounter === endGameCounter) {
+        /* if (rightAnswerCounter === endGameCounter) {
             console.log(`Congratulations, ${userName}!`);
             isRightAnswer = false;
-        }
+        } */
     }
 };
 
