@@ -1,14 +1,6 @@
 import takeUserInput from './cli.js';
 import { userRightAnswerOutput, userWrongAnswerOutput, getRandom } from './index.js';
 
-// проверка на правильность ответа
-const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
-    if (userAnswer === defaultAnswer) {
-        return true;
-    }
-    return false;
-};
-
 let rightAnswerCounter = 0;
 let isRightAnswer = true;
 
@@ -19,6 +11,25 @@ const isGameEnd = (userName, endGameCounter) => {
     }
 };
 
+// проверка корректности ввода ответа
+const isCorrectAnswer = (answer, userName) => {
+    if (answer !== 'yes' && answer !== 'no') {
+        console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
+        console.log(`Let\`s try again, ${userName}`);
+        isRightAnswer = false;
+        return false;
+    }
+    return true;
+};
+
+// проверка на правильность ответа
+const checkUserAnswer = (userAnswer, defaultAnswer = 'yes') => {
+    if (userAnswer === defaultAnswer) {
+        return true;
+    }
+    return false;
+};
+
 const guessEvenOrNot = (userName, endGameCounter = 3) => {
     while (isRightAnswer) {
         const randomNumber = getRandom(1000);
@@ -26,11 +37,14 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
         const answer = takeUserInput();
         const divisionRemainder = randomNumber % 2;
 
-        if (answer !== 'yes' && answer !== 'no') {
+        if (!isCorrectAnswer(answer, userName)) {
+            break;
+        }
+        /* if (answer !== 'yes' && answer !== 'no') {
             console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
             console.log(`Let\`s try again, ${userName}`);
             isRightAnswer = false;
-        }
+        } */
 
         if (divisionRemainder === 0) {
             if (checkUserAnswer(answer, 'yes')) {
