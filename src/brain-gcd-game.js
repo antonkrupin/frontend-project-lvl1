@@ -17,12 +17,13 @@ const giveNODResult = (userName, endGameCounter = 3) => {
         const secondNumber = getRandom(100);
         console.log(`Question: ${firstNumber} ${secondNumber}`);
         const answer = Number(takeUserInput());
+        const result = findNOD(firstNumber, secondNumber);
 
-        if (answer === findNOD(firstNumber, secondNumber)) {
+        if (answer === result) {
             userRightAnswerOutput(answer);
             rightAnswerCounter += 1;
         } else {
-            userWrongAnswerOutput(userName, answer, findNOD(firstNumber, secondNumber));
+            userWrongAnswerOutput(userName, answer, result);
             isRightAnswer = false;
         }
 
