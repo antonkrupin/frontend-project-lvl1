@@ -7,6 +7,7 @@ let isRightAnswer = true;
 let endOfGame = true;
 let rightAnswerCounter = 0;
 
+// нахождение наибольшего общего делителя
 const findNOD = (number1, number2) => {
     if (number2 === 0) {
         return Math.abs(number1);
