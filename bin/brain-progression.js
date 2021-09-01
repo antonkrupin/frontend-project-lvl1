@@ -4,5 +4,5 @@ import completeProgression from '../src/brain-progression-game.js';
 
 const userName = greetUser();
 console.log('What is the result of the expression?');
-console.log(userName);
-completeProgression();
+
+completeProgression(userName);
