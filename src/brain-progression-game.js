@@ -14,8 +14,8 @@ const generateProgression = (progressionStep, progressionSize) => {
     const dottedElIndex = getRandom(progressionSize);
     progresionArray.push(progressionFirstEl);
     for (let i = 0; i <= progressionSize; i += 1) {
-        const elForAdd = progresionArray[i] + progressionStep;
-        progresionArray.push(elForAdd);
+        const progressionEl = progresionArray[i] + progressionStep;
+        progresionArray.push(progressionEl);
     }
     const elForGuess = progresionArray[dottedElIndex];
     progresionArray[dottedElIndex] = '..';
