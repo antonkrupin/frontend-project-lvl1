@@ -7,6 +7,7 @@ let isRightAnswer = true;
 let endOfGame = true;
 let rightAnswerCounter = 0;
 
+// генерация последовательности
 const generateProgression = (progressionStep, progressionSize) => {
     const progresionArray = [];
     const progressionFirstEl = getRandom(15);
