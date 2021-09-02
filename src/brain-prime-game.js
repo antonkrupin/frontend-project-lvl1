@@ -7,17 +7,26 @@ let isRightAnswer = true;
 let endOfGame = true;
 let rightAnswerCounter = 0;
 
+const isPrime = (number) => {
+    for (let i = 2; i < number; i += 1) {
+        if (number % i === 0) {
+            return 'no';
+        }
+    }
+    return 'yes';
+};
+
 const guessPrimeOrNot = (userName, endGameCounter = 3) => {
     while (isRightAnswer && endOfGame) {
-        const step = getRandom(15);
-        const progression = generateProgression(step, 10);
-        console.log(`Question: ${progression[0].join(' ')}`);
-        const answer = Number(takeUserInput());
-        if (answer === progression[1]) {
+        const number = getRandom(100);
+        console.log(`Question: ${number}`);
+        const answer = takeUserInput();
+        const rightAnswer = isPrime(number);
+        if (answer === rightAnswer) {
             userRightAnswerOutput(answer);
             rightAnswerCounter += 1;
         } else {
-            userWrongAnswerOutput(userName, answer, progression[1]);
+            userWrongAnswerOutput(userName, answer, rightAnswer);
             isRightAnswer = false;
         }
 
