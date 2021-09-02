@@ -13,7 +13,6 @@ const isPrime = (number) => {
             return 'no';
         }
     }
-    console.log('test');
     return 'yes';
 };
 
