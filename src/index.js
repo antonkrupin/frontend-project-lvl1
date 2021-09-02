@@ -31,3 +31,5 @@ export const isGameEnd = (counter, endGameCounter, userName) => {
     }
     return true;
 };
+
+export default greetUser;
