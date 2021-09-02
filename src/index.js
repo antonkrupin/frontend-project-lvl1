@@ -17,7 +17,7 @@ export const userRightAnswerOutput = (answer) => {
 // вывод сообщения в случае не верного ответа
 export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
     console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
-    console.log(`Let\`s try again, ${userName}`);
+    console.log(`Let's try again, ${userName}`);
 };
 
 // генерирует случайное целое число
