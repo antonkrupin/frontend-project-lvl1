@@ -40,27 +40,27 @@ const giveExpressionResult = (userName, endGameCounter = 3) => {
     const answer = Number(takeUserInput());
 
     switch (expression.sign) {
-      case '+':
-      {
-        const resultPlus = expression.firstNumber + expression.secondNumber;
-        checkUserAnswer(resultPlus, answer, userName);
-        break;
-      }
-      case '-':
-      {
-        const resultMinus = expression.firstNumber - expression.secondNumber;
-        checkUserAnswer(resultMinus, answer, userName);
-        break;
-      }
-      case '*':
-      {
-        const resultMultiplication = expression.firstNumber * expression.secondNumber;
-        checkUserAnswer(resultMultiplication, answer, userName);
-        break;
-      }
-      default:
-        // do nothing;
-        break;
+    case '+':
+    {
+      const resultPlus = expression.firstNumber + expression.secondNumber;
+      checkUserAnswer(resultPlus, answer, userName);
+      break;
+    }
+    case '-':
+    {
+      const resultMinus = expression.firstNumber - expression.secondNumber;
+      checkUserAnswer(resultMinus, answer, userName);
+      break;
+    }
+    case '*':
+    {
+      const resultMultiplication = expression.firstNumber * expression.secondNumber;
+      checkUserAnswer(resultMultiplication, answer, userName);
+      break;
+    }
+    default:
+      // do nothing;
+      break;
     }
 
     endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
