@@ -1,14 +1,8 @@
-import takeUserInput from './cli.js';
-import {
-  userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
-} from './index.js';
-
-let rightAnswerCounter = 0;
-let endOfGame = true;
-let isRightAnswer = true;
+// eslint-disable-next-line import/no-cycle
+import { userRightAnswerOutput, userWrongAnswerOutput } from './index.js';
 
 // проверка корректности ввода ответа
-const isCorrectAnswer = (answer, userName) => {
+/* const isCorrectAnswer = (answer, userName) => {
   if (answer !== 'yes' && answer !== 'no') {
     console.log(`${answer} is wrong answer ;(. You need answer 'yes' or 'no'`);
     console.log(`Let\`s try again, ${userName}`);
@@ -16,8 +10,26 @@ const isCorrectAnswer = (answer, userName) => {
     return false;
   }
   return true;
+}; */
+
+// проверка остатка от деления
+const isZeroDivision = (divisionRemainder, answer, userName) => {
+  if (divisionRemainder === 0 && answer === 'yes') {
+    userRightAnswerOutput(answer);
+    return true;
+  } if (divisionRemainder !== 0 && answer === 'no') {
+    userRightAnswerOutput(answer);
+    return true;
+  }
+  if (answer === 'yes') {
+    userWrongAnswerOutput(userName, answer, 'no');
+  } else {
+    userWrongAnswerOutput(userName, answer, 'yes');
+  }
+  return false;
 };
 
+/*
 // проверка остатка от деления
 const isZeroDivision = (divisionRemainder, answer, userName) => {
   if (divisionRemainder === 0 && answer === 'yes') {
@@ -36,6 +48,9 @@ const isZeroDivision = (divisionRemainder, answer, userName) => {
   }
 };
 
+*/
+
+/*
 const guessEvenOrNot = (userName, endGameCounter = 3) => {
   while (isRightAnswer && endOfGame) {
     const randomNumber = getRandom(1000);
@@ -51,6 +66,6 @@ const guessEvenOrNot = (userName, endGameCounter = 3) => {
 
     endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
   }
-};
+}; */
 
-export default guessEvenOrNot;
+export default isZeroDivision;
