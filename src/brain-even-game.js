@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { userRightAnswerOutput, userWrongAnswerOutput } from './index.js';
+import { userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
 
 // проверка остатка от деления
 const isZeroDivision = (divisionRemainder, answer, userName) => {
