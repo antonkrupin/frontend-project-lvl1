@@ -26,4 +26,9 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
   console.log(`Let's try again, ${userName}!`);
 };
 
+// вывод вопроса пользователю
+export const generateQuestion = (...elems) => {
+  console.log(`${elems.join(' ')}`);
+};
+
 export default takeUserInput;
