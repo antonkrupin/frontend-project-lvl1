@@ -5,6 +5,8 @@ import generateProgression from './brain-progression-game.js';
 // eslint-disable-next-line import/no-cycle
 import generateExpression from './brain-calc-game.js';
 import isPrime from './brain-prime-game.js';
+// eslint-disable-next-line import/no-cycle
+import isZeroDivision from './brain-even-game.js';
 
 // приветствие пользователя
 export const greetUser = () => {
@@ -29,6 +31,15 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
 // генерирует случайное целое число
 export const getRandom = (max) => Math.floor(Math.random() * max);
 
+// проверка окончания игры
+export const isGameEnd = (counter, endGameCounter, userName) => {
+  if (counter === endGameCounter) {
+    console.log(`Congratulations, ${userName}!`);
+    return false;
+  }
+  return true;
+};
+
 // проверка правильности ответа
 export const checkUserAnswer = (result, answer, userName) => {
   if (result === answer) {
@@ -39,13 +50,15 @@ export const checkUserAnswer = (result, answer, userName) => {
   return false;
 };
 
-// проверка окончания игры
-export const isGameEnd = (counter, endGameCounter, userName) => {
-  if (counter === endGameCounter) {
-    console.log(`Congratulations, ${userName}!`);
-    return false;
-  }
-  return true;
+// игра где нужно определить четный элемент или нет
+// eslint-disable-next-line consistent-return
+export const guessEvenOrNot = (userName) => {
+  const randomNumber = getRandom(1000);
+  console.log(`Question: ${randomNumber}`);
+  const answer = takeUserInput();
+  const divisionRemainder = randomNumber % 2;
+
+  return isZeroDivision(divisionRemainder, answer, userName);
 };
 
 // игра где нужно указать резульат выражения
