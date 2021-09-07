@@ -96,12 +96,13 @@ export const completeProgression = (userName) => {
   const progression = generateProgression(step, 10);
   console.log(`Question: ${progression[0].join(' ')}`);
   const answer = Number(takeUserInput());
-  if (answer === progression[1]) {
+  /* if (answer === progression[1]) {
     userRightAnswerOutput(answer);
     return true;
   }
   userWrongAnswerOutput(userName, answer, progression[1]);
-  return false;
+  return false; */
+  return checkUserAnswer(progression[1], answer, userName);
 };
 
 // игра где нужно найти наибольший общий делитель
@@ -111,12 +112,13 @@ export const giveNODResult = (userName) => {
   console.log(`Question: ${firstNumber} ${secondNumber}`);
   const answer = Number(takeUserInput());
   const result = findNOD(firstNumber, secondNumber);
-  if (answer === result) {
+  /* if (answer === result) {
     userRightAnswerOutput(answer);
     return true;
   }
   userWrongAnswerOutput(userName, answer, result);
-  return false;
+  return false; */
+  return checkUserAnswer(result, answer, userName);
 };
 
 // игра где нужно определить является ли число простым
@@ -125,12 +127,13 @@ export const guessPrimeOrNot = (userName) => {
   console.log(`Question: ${number}`);
   const answer = takeUserInput();
   const rightAnswer = isPrime(number);
-  if (answer === rightAnswer) {
+  /* if (answer === rightAnswer) {
     userRightAnswerOutput(answer);
     return true;
   }
   userWrongAnswerOutput(userName, answer, rightAnswer);
-  return false;
+  return false; */
+  return checkUserAnswer(rightAnswer, answer, userName);
 };
 
 // общая функция для старта игры
