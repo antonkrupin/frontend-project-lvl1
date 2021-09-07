@@ -2,6 +2,8 @@ import takeUserInput from './cli.js';
 import findNOD from './brain-gcd-game.js';
 // eslint-disable-next-line import/no-cycle
 import generateProgression from './brain-progression-game.js';
+// eslint-disable-next-line import/no-cycle
+import generateExpression from './brain-calc-game.js';
 
 // приветствие пользователя
 export const greetUser = () => {
@@ -26,6 +28,16 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
 // генерирует случайное целое число
 export const getRandom = (max) => Math.floor(Math.random() * max);
 
+// проверка правильности ответа
+export const checkUserAnswer = (result, answer, userName) => {
+  if (result === answer) {
+    userRightAnswerOutput(answer);
+    return true;
+  }
+  userWrongAnswerOutput(userName, answer, result);
+  return false;
+};
+
 // проверка окончания игры
 export const isGameEnd = (counter, endGameCounter, userName) => {
   if (counter === endGameCounter) {
@@ -33,6 +45,34 @@ export const isGameEnd = (counter, endGameCounter, userName) => {
     return false;
   }
   return true;
+};
+
+// eslint-disable-next-line consistent-return
+export const giveExpressionResult = (userName) => {
+  const expression = generateExpression();
+  console.log(`Question: ${expression.expression()}`);
+  const answer = Number(takeUserInput());
+
+  switch (expression.sign) {
+    case '+':
+    {
+      const resultPlus = expression.firstNumber + expression.secondNumber;
+      return checkUserAnswer(resultPlus, answer, userName);
+    }
+    case '-':
+    {
+      const resultMinus = expression.firstNumber - expression.secondNumber;
+      return checkUserAnswer(resultMinus, answer, userName);
+    }
+    case '*':
+    {
+      const resultMultiplication = expression.firstNumber * expression.secondNumber;
+      return checkUserAnswer(resultMultiplication, answer, userName);
+    }
+    default:
+    // do nothing;
+      break;
+  }
 };
 
 export const completeProgression = (userName) => {
