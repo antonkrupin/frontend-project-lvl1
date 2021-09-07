@@ -6,25 +6,4 @@ const findNOD = (number1, number2) => {
   return findNOD(number2, number1 % number2);
 };
 
-/* const giveNODResult = (userName, endGameCounter = 3) => {
-  while (isRightAnswer && endOfGame) {
-    const firstNumber = getRandom(100);
-    const secondNumber = getRandom(100);
-    console.log(`Question: ${firstNumber} ${secondNumber}`);
-    const answer = Number(takeUserInput());
-    const result = findNOD(firstNumber, secondNumber);
-
-    if (answer === result) {
-      userRightAnswerOutput(answer);
-      rightAnswerCounter += 1;
-    } else {
-      userWrongAnswerOutput(userName, answer, result);
-      isRightAnswer = false;
-    }
-
-    endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
-  }
-};
-
-*/
 export default findNOD;
