@@ -1,12 +1,3 @@
-import takeUserInput from './cli.js';
-import {
-  userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
-} from './index.js';
-
-let isRightAnswer = true;
-let endOfGame = true;
-let rightAnswerCounter = 0;
-
 // нахождение наибольшего общего делителя
 const findNOD = (number1, number2) => {
   if (number2 === 0) {
@@ -15,7 +6,7 @@ const findNOD = (number1, number2) => {
   return findNOD(number2, number1 % number2);
 };
 
-const giveNODResult = (userName, endGameCounter = 3) => {
+/* const giveNODResult = (userName, endGameCounter = 3) => {
   while (isRightAnswer && endOfGame) {
     const firstNumber = getRandom(100);
     const secondNumber = getRandom(100);
@@ -35,4 +26,5 @@ const giveNODResult = (userName, endGameCounter = 3) => {
   }
 };
 
-export default giveNODResult;
+*/
+export default findNOD;
