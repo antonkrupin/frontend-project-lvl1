@@ -1,17 +1,6 @@
-// import readlineSync from 'readline-sync';
 import { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
-// генерирует случайное целое число
-export const getRandom = (max) => Math.floor(Math.random() * max);
 
-// проверка правильности ответа
-/* export const checkUserAnswer = (result, answer, userName) => {
-  if (result === answer) {
-    userRightAnswerOutput(answer);
-    return true;
-  }
-  userWrongAnswerOutput(userName, answer, result);
-  return false;
-}; */
+export const getRandom = (max) => Math.floor(Math.random() * max);
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
