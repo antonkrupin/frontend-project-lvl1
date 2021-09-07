@@ -4,14 +4,14 @@ import { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.j
 export const getRandom = (max) => Math.floor(Math.random() * max);
 
 // проверка правильности ответа
-export const checkUserAnswer = (result, answer, userName) => {
+/* export const checkUserAnswer = (result, answer, userName) => {
   if (result === answer) {
     userRightAnswerOutput(answer);
     return true;
   }
   userWrongAnswerOutput(userName, answer, result);
   return false;
-};
+}; */
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
