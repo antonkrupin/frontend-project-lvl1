@@ -47,6 +47,7 @@ export const isGameEnd = (counter, endGameCounter, userName) => {
   return true;
 };
 
+// игра где нужно указать резульат выражения
 // eslint-disable-next-line consistent-return
 export const giveExpressionResult = (userName) => {
   const expression = generateExpression();
@@ -75,6 +76,7 @@ export const giveExpressionResult = (userName) => {
   }
 };
 
+// игра где нужно указать пропущенный элемент прогрессии
 export const completeProgression = (userName) => {
   const step = getRandom(15);
   const progression = generateProgression(step, 10);
@@ -88,6 +90,7 @@ export const completeProgression = (userName) => {
   return false;
 };
 
+// игра где нужно найти наибольший общий делитель
 export const giveNODResult = (userName) => {
   const firstNumber = getRandom(100);
   const secondNumber = getRandom(100);
@@ -102,6 +105,7 @@ export const giveNODResult = (userName) => {
   return false;
 };
 
+// общая функция для старта игры
 const startGame = (userName, gameFunction, endGameCounter = 3) => {
   let rightAnswerCounter = 0;
   let isRightAnswer = true;
