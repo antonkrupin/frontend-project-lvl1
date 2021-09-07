@@ -1,4 +1,4 @@
-import takeUserInput, { userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
+import takeUserInput, { userRightAnswerOutput, userWrongAnswerOutput, generateQuestion } from './cli.js';
 import findNOD from './brain-gcd-game.js';
 // eslint-disable-next-line import/no-cycle
 import generateProgression from './brain-progression-game.js';
@@ -25,7 +25,8 @@ export const checkUserAnswer = (result, answer, userName) => {
 // eslint-disable-next-line consistent-return
 export const guessEvenOrNot = (userName) => {
   const randomNumber = getRandom(1000);
-  console.log(`Question: ${randomNumber}`);
+  // console.log(`Question: ${randomNumber}`);
+  generateQuestion(randomNumber);
   const answer = takeUserInput();
   const divisionRemainder = randomNumber % 2;
 
