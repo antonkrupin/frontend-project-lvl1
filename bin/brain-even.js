@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import { greetUser } from '../src/cli.js';
-import startGame, { guessEvenOrNot } from '../src/index.js';
+import startGame from '../src/index.js';
+import guessEvenOrNot from '../src/brain-even-game.js';
 
-const userName = greetUser();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-startGame(userName, guessEvenOrNot);
+startGame(guessEvenOrNot, 'Answer "yes" if the number is even, otherwise answer "no".');

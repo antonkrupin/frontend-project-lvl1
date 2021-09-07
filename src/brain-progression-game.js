@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-cycle
+import takeUserInput from './cli.js';
 import { getRandom } from './index.js';
 
 // генерация последовательности
@@ -16,4 +16,13 @@ const generateProgression = (progressionStep, progressionSize) => {
   return [progresionArray, elForGuess];
 };
 
-export default generateProgression;
+const completeProgression = () => {
+  const step = getRandom(15);
+  const progression = generateProgression(step, 10);
+  console.log(`Question: ${progression[0].join(' ')}`);
+  const answer = Number(takeUserInput());
+  const result = progression[1];
+  return [answer, result];
+};
+
+export default completeProgression;

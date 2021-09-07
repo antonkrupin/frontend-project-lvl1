@@ -1,3 +1,6 @@
+import takeUserInput from './cli.js';
+import { getRandom } from './index.js';
+
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
@@ -7,4 +10,12 @@ const isPrime = (number) => {
   return 'yes';
 };
 
-export default isPrime;
+const guessPrimeOrNot = () => {
+  const number = getRandom(100);
+  console.log(`Question: ${number}`);
+  const answer = takeUserInput();
+  const result = isPrime(number);
+  return [answer, result];
+};
+
+export default guessPrimeOrNot;

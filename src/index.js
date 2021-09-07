@@ -1,13 +1,5 @@
-import takeUserInput, { userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
-import findNOD from './brain-gcd-game.js';
-// eslint-disable-next-line import/no-cycle
-import generateProgression from './brain-progression-game.js';
-// eslint-disable-next-line import/no-cycle
-import generateExpression from './brain-calc-game.js';
-import isPrime from './brain-prime-game.js';
-// eslint-disable-next-line import/no-cycle
-import isZeroDivision from './brain-even-game.js';
-
+// import readlineSync from 'readline-sync';
+import { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
 // генерирует случайное целое число
 export const getRandom = (max) => Math.floor(Math.random() * max);
 
@@ -23,18 +15,18 @@ export const checkUserAnswer = (result, answer, userName) => {
 
 // игра где нужно определить четный элемент или нет
 // eslint-disable-next-line consistent-return
-export const guessEvenOrNot = (userName) => {
+/* export const guessEvenOrNot = (userName) => {
   const randomNumber = getRandom(1000);
   console.log(`Question: ${randomNumber}`);
   const answer = takeUserInput();
   const divisionRemainder = randomNumber % 2;
 
   return isZeroDivision(divisionRemainder, answer, userName);
-};
+}; */
 
 // игра где нужно указать резульат выражения
 // eslint-disable-next-line consistent-return
-export const giveExpressionResult = (userName) => {
+/* export const giveExpressionResult = (userName) => {
   const expression = generateExpression();
   console.log(`Question: ${expression.expression()}`);
   const answer = Number(takeUserInput());
@@ -59,54 +51,55 @@ export const giveExpressionResult = (userName) => {
     // do nothing;
       break;
   }
-};
+}; */
 
 // игра где нужно указать пропущенный элемент прогрессии
-export const completeProgression = (userName) => {
+/* export const completeProgression = () => {
   const step = getRandom(15);
   const progression = generateProgression(step, 10);
   console.log(`Question: ${progression[0].join(' ')}`);
   const answer = Number(takeUserInput());
   const result = progression[1];
-  return checkUserAnswer(result, answer, userName);
-};
+  return [answer, result];
+}; */
 
 // игра где нужно найти наибольший общий делитель
-export const giveNODResult = (userName) => {
+/* export const giveNODResult = () => {
   const firstNumber = getRandom(100);
   const secondNumber = getRandom(100);
   console.log(`Question: ${firstNumber} ${secondNumber}`);
   const answer = Number(takeUserInput());
   const result = findNOD(firstNumber, secondNumber);
-  return checkUserAnswer(result, answer, userName);
-};
+  return [answer, result];
+}; */
 
-// игра где нужно определить является ли число простым
-export const guessPrimeOrNot = (userName) => {
+/*
+const guessPrimeOrNot = () => {
   const number = getRandom(100);
   console.log(`Question: ${number}`);
   const answer = takeUserInput();
   const result = isPrime(number);
-  return checkUserAnswer(result, answer, userName);
+  return [answer, result];
 };
-
+*/
+const gameRoundCounter = 3;
 // общая функция для старта игры
-const startGame = (userName, gameFunction, endGameCounter = 3) => {
-  let rightAnswerCounter = 0;
-  let isRightAnswer = true;
-
-  while (isRightAnswer) {
+const startGame = (gameFunction, gameQuestion) => {
+  let rightAnswersCounter = 0;
+  const userName = greetUser();
+  console.log(gameQuestion);
+  for (let i = 0; i < gameRoundCounter; i += 1) {
     const result = gameFunction(userName);
-    if (result) {
-      rightAnswerCounter += 1;
+    if (result[0] === result[1]) {
+      userRightAnswerOutput(result[1]);
     } else {
-      isRightAnswer = false;
+      userWrongAnswerOutput(userName, result[0], result[1]);
+      break;
     }
-
-    if (rightAnswerCounter === endGameCounter) {
-      console.log(`Congratulations, ${userName}!`);
-      isRightAnswer = false;
-    }
+    rightAnswersCounter += 1;
+  }
+  if (rightAnswersCounter === gameRoundCounter) {
+    console.log(`Congratulations, ${userName}!`);
   }
 };
 

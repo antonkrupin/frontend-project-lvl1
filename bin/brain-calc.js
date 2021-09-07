@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import { greetUser } from '../src/cli.js';
-import startGame, { giveExpressionResult } from '../src/index.js';
+import startGame from '../src/index.js';
+import giveExpressionResult from '../src/brain-calc-game.js';
 
-const userName = greetUser();
-console.log('What is the result of the expression?');
-
-startGame(userName, giveExpressionResult);
+startGame(giveExpressionResult, 'What is the result of the expression?');
