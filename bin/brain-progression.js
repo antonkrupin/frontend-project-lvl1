@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-import { greetUser } from '../src/index.js';
-import completeProgression from '../src/brain-progression-game.js';
+import startGame, { completeProgression, greetUser } from '../src/index.js';
 
 const userName = greetUser();
 console.log('What is the result of the expression?');
 
-completeProgression(userName);
+startGame(userName, completeProgression);
