@@ -1,7 +1,5 @@
-import takeUserInput from './cli.js';
-import {
-  userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
-} from './index.js';
+// eslint-disable-next-line import/no-cycle
+import { getRandom } from './index.js';
 
 // генерация выражения для пользователя
 const generateExpression = () => {
@@ -18,7 +16,7 @@ const generateExpression = () => {
   return expression;
 };
 
-let rightAnswerCounter = 0;
+/* let rightAnswerCounter = 0;
 let endOfGame = true;
 let isRightAnswer = true;
 
@@ -31,9 +29,9 @@ const checkUserAnswer = (result, answer, userName) => {
     userWrongAnswerOutput(userName, answer, result);
     isRightAnswer = false;
   }
-};
+}; */
 
-const giveExpressionResult = (userName, endGameCounter = 3) => {
+/* const giveExpressionResult = (userName, endGameCounter = 3) => {
   while (isRightAnswer && endOfGame) {
     const expression = generateExpression();
     console.log(`Question: ${expression.expression()}`);
@@ -65,6 +63,6 @@ const giveExpressionResult = (userName, endGameCounter = 3) => {
 
     endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
   }
-};
+}; */
 
-export default giveExpressionResult;
+export default generateExpression;
