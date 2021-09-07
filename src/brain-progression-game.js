@@ -1,11 +1,4 @@
-import takeUserInput from './cli.js';
-import {
-  userRightAnswerOutput, userWrongAnswerOutput, getRandom, isGameEnd,
-} from './index.js';
-
-let isRightAnswer = true;
-let endOfGame = true;
-let rightAnswerCounter = 0;
+import { getRandom } from './index.js';
 
 // генерация последовательности
 const generateProgression = (progressionStep, progressionSize) => {
@@ -22,7 +15,7 @@ const generateProgression = (progressionStep, progressionSize) => {
   return [progresionArray, elForGuess];
 };
 
-const completeProgression = (userName, endGameCounter = 3) => {
+/* const completeProgression = (userName, endGameCounter = 3) => {
   while (isRightAnswer && endOfGame) {
     const step = getRandom(15);
     const progression = generateProgression(step, 10);
@@ -39,5 +32,5 @@ const completeProgression = (userName, endGameCounter = 3) => {
     endOfGame = isGameEnd(rightAnswerCounter, endGameCounter, userName);
   }
 };
-
-export default completeProgression;
+*/
+export default generateProgression;
