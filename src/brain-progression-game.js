@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { getRandom } from './index.js';
 
 // генерация последовательности
