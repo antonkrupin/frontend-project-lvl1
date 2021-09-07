@@ -1,5 +1,7 @@
 import takeUserInput from './cli.js';
 import findNOD from './brain-gcd-game.js';
+// eslint-disable-next-line import/no-cycle
+import generateProgression from './brain-progression-game.js';
 
 // приветствие пользователя
 export const greetUser = () => {
@@ -31,6 +33,19 @@ export const isGameEnd = (counter, endGameCounter, userName) => {
     return false;
   }
   return true;
+};
+
+export const completeProgression = (userName) => {
+  const step = getRandom(15);
+  const progression = generateProgression(step, 10);
+  console.log(`Question: ${progression[0].join(' ')}`);
+  const answer = Number(takeUserInput());
+  if (answer === progression[1]) {
+    userRightAnswerOutput(answer);
+    return true;
+  }
+  userWrongAnswerOutput(userName, answer, progression[1]);
+  return false;
 };
 
 export const giveNODResult = (userName) => {
