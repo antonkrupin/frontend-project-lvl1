@@ -4,6 +4,7 @@ import findNOD from './brain-gcd-game.js';
 import generateProgression from './brain-progression-game.js';
 // eslint-disable-next-line import/no-cycle
 import generateExpression from './brain-calc-game.js';
+import isPrime from './brain-prime-game.js';
 
 // приветствие пользователя
 export const greetUser = () => {
@@ -102,6 +103,20 @@ export const giveNODResult = (userName) => {
     return true;
   }
   userWrongAnswerOutput(userName, answer, result);
+  return false;
+};
+
+// игра где нужно определить является ли число простым
+export const guessPrimeOrNot = (userName) => {
+  const number = getRandom(100);
+  console.log(`Question: ${number}`);
+  const answer = takeUserInput();
+  const rightAnswer = isPrime(number);
+  if (answer === rightAnswer) {
+    userRightAnswerOutput(answer);
+    return true;
+  }
+  userWrongAnswerOutput(userName, answer, rightAnswer);
   return false;
 };
 
