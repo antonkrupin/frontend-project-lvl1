@@ -4,10 +4,10 @@ export const getRandom = (max) => Math.floor(Math.random() * max);
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
-const startGame = (gameFunction, gameQuestion) => {
+const startGame = (gameFunction, gameRules) => {
   let rightAnswersCounter = 0;
   const userName = greetUser();
-  console.log(gameQuestion);
+  console.log(gameRules);
   for (let i = 0; i < gameRoundCounter; i += 1) {
     const result = gameFunction(userName);
     if (result[0] === result[1]) {
