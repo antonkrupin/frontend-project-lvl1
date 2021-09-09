@@ -1,5 +1,5 @@
 import takeUserInput from '../src/cli.js';
-import getRandom from '../src/asset-functions';
+import getRandom from '../src/asset-functions.js';
 
 // генерация последовательности
 const generateProgression = (progressionStep, progressionSize) => {
