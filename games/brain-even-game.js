@@ -1,5 +1,5 @@
-import takeUserInput from './cli.js';
-import getRandom from './asset-functions.js';
+import takeUserInput from '../src/cli.js';
+import getRandom from '../src/asset-functions.js';
 
 const guessEvenOrNot = () => {
   const randomNumber = getRandom(1000);
