@@ -1,4 +1,3 @@
-import takeUserInput from '../src/cli.js';
 import getRandom from '../src/asset-functions.js';
 
 const isPrime = (number) => {
@@ -11,11 +10,9 @@ const isPrime = (number) => {
 };
 
 const guessPrimeOrNot = () => {
-  const number = getRandom(100);
-  console.log(`Question: ${number}`);
-  const answer = takeUserInput();
-  const result = isPrime(number);
-  return [answer, result];
+  const question = getRandom(100);
+  const result = isPrime(question);
+  return [question, result];
 };
 
 export default guessPrimeOrNot;
