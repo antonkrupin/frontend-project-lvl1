@@ -1,4 +1,5 @@
-import takeUserInput from '../src/cli.js';
+// import takeUserInput from '../src/cli.js';
+// import { question } from 'readline-sync';
 import getRandom from '../src/asset-functions.js';
 
 // генерация последовательности
@@ -19,10 +20,11 @@ const generateProgression = (progressionStep, progressionSize) => {
 const completeProgression = () => {
   const step = getRandom(15);
   const progression = generateProgression(step, 10);
-  console.log(`Question: ${progression[0].join(' ')}`);
-  const answer = Number(takeUserInput());
+  const question = progression[0];
+  // console.log(`Question: ${progression[0].join(' ')}`);
+  // const answer = Number(takeUserInput());
   const result = progression[1];
-  return [answer, result];
+  return [question, String(result)];
 };
 
 export default completeProgression;
