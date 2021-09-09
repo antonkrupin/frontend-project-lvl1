@@ -6,7 +6,7 @@ const takeUserInput = (userQuestion) => {
   return input;
 };
 
-// приветствие пользователя
+// приветствие пользователя (то что оставить)
 export const greetUser = () => {
   console.log('Welcome to the Brain Games!');
   const userName = takeUserInput('May I have your name? ');
