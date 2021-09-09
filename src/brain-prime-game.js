@@ -1,5 +1,5 @@
 import takeUserInput from './cli.js';
-import { getRandom } from './index.js';
+import getRandom from './asset-functions.js';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {

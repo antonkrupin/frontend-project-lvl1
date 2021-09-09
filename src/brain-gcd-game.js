@@ -1,5 +1,5 @@
 import takeUserInput from './cli.js';
-import { getRandom } from './index.js';
+import getRandom from './asset-functions.js';
 
 // нахождение наибольшего общего делителя
 const findNOD = (number1, number2) => {
