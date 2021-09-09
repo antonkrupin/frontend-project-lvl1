@@ -8,7 +8,11 @@ const startGame = (gameFunction, gameRules) => {
   console.log(gameRules);
   for (let i = 0; i < gameRoundCounter; i += 1) {
     const result = gameFunction(userName);
-    console.log(`Question: ${result[0]}`);
+    if (typeof (result[0]) !== 'object') {
+      console.log(`Question: ${result[0]}`);
+    } else {
+      console.log(`Question: ${result[0].join(' ')}`);
+    }
     const answer = takeUserInput();
     if (answer === result[1]) {
       userRightAnswerOutput(answer);
