@@ -1,4 +1,4 @@
-import { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
+import takeUserInput, { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
@@ -8,10 +8,12 @@ const startGame = (gameFunction, gameRules) => {
   console.log(gameRules);
   for (let i = 0; i < gameRoundCounter; i += 1) {
     const result = gameFunction(userName);
-    if (result[0] === result[1]) {
-      userRightAnswerOutput(result[1]);
+    console.log(`Question: ${result[0]}`);
+    const answer = takeUserInput();
+    if (answer === result[1]) {
+      userRightAnswerOutput(answer);
     } else {
-      userWrongAnswerOutput(userName, result[0], result[1]);
+      userWrongAnswerOutput(userName, answer, result[1]);
       break;
     }
     rightAnswersCounter += 1;
