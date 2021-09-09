@@ -1,4 +1,5 @@
-import takeUserInput from '../src/cli.js';
+// import takeUserInput from '../src/cli.js';
+// import { question } from 'readline-sync';
 import getRandom from '../src/asset-functions.js';
 
 // нахождение наибольшего общего делителя
@@ -12,10 +13,11 @@ const findNOD = (number1, number2) => {
 const giveNODResult = () => {
   const firstNumber = getRandom(100);
   const secondNumber = getRandom(100);
-  console.log(`Question: ${firstNumber} ${secondNumber}`);
-  const answer = Number(takeUserInput());
+  const question = [firstNumber, secondNumber];
+  // console.log(`Question: ${firstNumber} ${secondNumber}`);
+  // const answer = Number(takeUserInput());
   const result = findNOD(firstNumber, secondNumber);
-  return [answer, result];
+  return [question, String(result)];
 };
 
 export default giveNODResult;
