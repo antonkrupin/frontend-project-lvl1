@@ -1,5 +1,6 @@
-import takeUserInput from '../src/cli.js';
+// import takeUserInput from '../src/cli.js';
 import getRandom from '../src/asset-functions.js';
+// import { question } from 'readline-sync';
 
 // генерация выражения для пользователя
 const generateExpression = () => {
@@ -19,24 +20,24 @@ const generateExpression = () => {
 // eslint-disable-next-line consistent-return
 const giveExpressionResult = () => {
   const expression = generateExpression();
-  console.log(`Question: ${expression.expression()}`);
-  const answer = Number(takeUserInput());
-
+  // console.log(`Question: ${expression.expression()}`);
+  // const answer = Number(takeUserInput());
+  const question = expression.expression();
   switch (expression.sign) {
     case '+':
     {
       const resultPlus = expression.firstNumber + expression.secondNumber;
-      return [answer, resultPlus];
+      return [question, String(resultPlus)];
     }
     case '-':
     {
       const resultMinus = expression.firstNumber - expression.secondNumber;
-      return [answer, resultMinus];
+      return [question, String(resultMinus)];
     }
     case '*':
     {
       const resultMultiplication = expression.firstNumber * expression.secondNumber;
-      return [answer, resultMultiplication];
+      return [question, String(resultMultiplication)];
     }
     default:
     // do nothing;
