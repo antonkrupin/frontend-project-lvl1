@@ -1,7 +1,5 @@
 import { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
 
-export const getRandom = (max) => Math.floor(Math.random() * max);
-
 const gameRoundCounter = 3;
 // общая функция для старта игры
 const startGame = (gameFunction, gameRules) => {
