@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../src/asset-functions.js';
 
+// игра четное число или нет
 const guessEvenOrNot = () => {
   const randomNumber = getRandom(1000);
   const question = randomNumber;
