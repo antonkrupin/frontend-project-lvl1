@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import getRandom from '../src/asset-functions.js';
 
 const isPrime = (number) => {
