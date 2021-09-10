@@ -17,29 +17,35 @@ const generateExpression = () => {
 };
 
 // eslint-disable-next-line consistent-return
-const giveExpressionResult = () => {
-  const expression = generateExpression();
-  const question = expression.expression();
-  switch (expression.sign) {
+const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
+  switch (expressionSign) {
     case '+':
     {
-      const resultPlus = expression.firstNumber + expression.secondNumber;
-      return [question, String(resultPlus)];
+      const resultPlus = firstNumber + secondNumber;
+      return String(resultPlus);
     }
     case '-':
     {
-      const resultMinus = expression.firstNumber - expression.secondNumber;
-      return [question, String(resultMinus)];
+      const resultMinus = firstNumber - secondNumber;
+      return String(resultMinus);
     }
     case '*':
     {
-      const resultMultiplication = expression.firstNumber * expression.secondNumber;
-      return [question, String(resultMultiplication)];
+      const resultMultiplication = firstNumber * secondNumber;
+      return String(resultMultiplication);
     }
     default:
     // do nothing;
       break;
   }
+};
+
+const giveExpressionResult = () => {
+  const expression = generateExpression();
+  const question = expression.expression();
+  // eslint-disable-next-line max-len
+  const result = calculateExpression(expression.firstNumber, expression.secondNumber, expression.sign);
+  return [question, result];
 };
 
 export default giveExpressionResult;
