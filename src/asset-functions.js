@@ -11,8 +11,6 @@ import guessEvenOrNot from '../games/brain-even-game.js';
 // eslint-disable-next-line import/no-cycle
 import startGame from './index.js';
 
-const getRandom = (max) => Math.floor(Math.random() * max);
-
 export const startFuckingGame = (gameName, gameRules) => {
   const functionsObject = {
     giveNODResult,
@@ -35,5 +33,7 @@ export const userWrongAnswerOutput = (userName, userAnswer, correctAnswer) => {
   console.log(`${userAnswer} is wrong answer ;(. Correct was '${correctAnswer}'`);
   console.log(`Let's try again, ${userName}!`);
 };
+
+const getRandom = (max) => Math.floor(Math.random() * max);
 
 export default getRandom;
