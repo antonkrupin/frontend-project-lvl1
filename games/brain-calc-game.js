@@ -46,9 +46,7 @@ const giveExpressionResult = () => {
   const firstNumber = getRandom(100);
   const secondNumber = getRandom(100);
   const sign = expressionsSignArray[expressionNumber];
-  // const expression = generateExpression();
   const question = `${firstNumber} ${sign} ${secondNumber}`;
-  // eslint-disable-next-line max-len
   const result = calculateExpression(firstNumber, secondNumber, sign);
   return [question, result];
 };
