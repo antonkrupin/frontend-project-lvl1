@@ -9,6 +9,7 @@ import guessPrimeOrNot from '../games/brain-prime-game.js';
 import completeProgression from '../games/brain-progression-game.js';
 // eslint-disable-next-line import/no-cycle
 import guessEvenOrNot from '../games/brain-even-game.js';
+// eslint-disable-next-line import/no-cycle
 import startGame from './index.js';
 
 const getRandom = (max) => Math.floor(Math.random() * max);
