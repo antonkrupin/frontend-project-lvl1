@@ -1,5 +1,3 @@
-// import takeUserInput from '../src/cli.js';
-// import { question } from 'readline-sync';
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../src/asset-functions.js';
 
