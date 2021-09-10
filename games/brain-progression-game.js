@@ -20,8 +20,6 @@ const completeProgression = () => {
   const step = getRandom(15);
   const progression = generateProgression(step, 10);
   const question = progression[0];
-  // console.log(`Question: ${progression[0].join(' ')}`);
-  // const answer = Number(takeUserInput());
   const result = progression[1];
   return [question, String(result)];
 };

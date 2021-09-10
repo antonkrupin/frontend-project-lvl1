@@ -19,8 +19,6 @@ const generateExpression = () => {
 // eslint-disable-next-line consistent-return
 const giveExpressionResult = () => {
   const expression = generateExpression();
-  // console.log(`Question: ${expression.expression()}`);
-  // const answer = Number(takeUserInput());
   const question = expression.expression();
   switch (expression.sign) {
     case '+':

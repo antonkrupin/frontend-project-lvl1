@@ -13,8 +13,6 @@ const giveNODResult = () => {
   const firstNumber = getRandom(100);
   const secondNumber = getRandom(100);
   const question = [firstNumber, secondNumber];
-  // console.log(`Question: ${firstNumber} ${secondNumber}`);
-  // const answer = Number(takeUserInput());
   const result = findNOD(firstNumber, secondNumber);
   return [question, String(result)];
 };
