@@ -1,4 +1,3 @@
-import takeUserInput from './cli.js';
 // eslint-disable-next-line import/no-cycle
 import giveExpressionResult from '../games/brain-calc-game.js';
 // eslint-disable-next-line import/no-cycle
@@ -23,14 +22,6 @@ export const startFuckingGame = (gameName, gameRules) => {
     guessEvenOrNot,
   };
   startGame(functionsObject[gameName], gameRules);
-};
-
-// приветствие пользователя (то что оставить)
-export const greetUser = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = takeUserInput('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  return userName;
 };
 
 // вывод сообщения в случае верного ответа
