@@ -2,7 +2,7 @@
 import getRandom from '../src/asset-functions.js';
 
 // генерация выражения для пользователя
-const generateExpression = () => {
+export const generateExpression = () => {
   const expressionsSignArray = ['+', '-', '*'];
   const expressionNumber = getRandom(expressionsSignArray.length);
   const expression = {
@@ -41,10 +41,15 @@ const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
 };
 
 const giveExpressionResult = () => {
-  const expression = generateExpression();
-  const question = expression.expression();
+  const expressionsSignArray = ['+', '-', '*'];
+  const expressionNumber = getRandom(expressionsSignArray.length);
+  const firstNumber = getRandom(100);
+  const secondNumber = getRandom(100);
+  const sign = expressionsSignArray[expressionNumber];
+  // const expression = generateExpression();
+  const question = `${firstNumber} ${sign} ${secondNumber}`;
   // eslint-disable-next-line max-len
-  const result = calculateExpression(expression.firstNumber, expression.secondNumber, expression.sign);
+  const result = calculateExpression(firstNumber, secondNumber, sign);
   return [question, result];
 };
 
