@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import takeUserInput from './cli.js';
 // eslint-disable-next-line import/no-cycle
 import { userRightAnswerOutput, userWrongAnswerOutput } from './asset-functions.js';
 
@@ -18,7 +17,7 @@ const startGame = (gameFunction, gameRules) => {
     } else {
       console.log(`Question: ${result[0].join(' ')}`);
     }
-    const answer = takeUserInput();
+    const answer = readlineSync.question();
     if (answer === result[1]) {
       userRightAnswerOutput(answer);
     } else {
