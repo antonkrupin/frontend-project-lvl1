@@ -1,9 +1,11 @@
 import readlineSync from 'readline-sync';
 
-// считывание ввода пользователя
-const takeUserInput = (userQuestion) => {
-  const input = readlineSync.question(userQuestion);
-  return input;
+// приветствие пользователя (то что оставить)
+const greetUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
 };
 
-export default takeUserInput;
+export default greetUser;
