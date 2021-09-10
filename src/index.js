@@ -1,10 +1,15 @@
-import takeUserInput, { greetUser, userRightAnswerOutput, userWrongAnswerOutput } from './cli.js';
+import readlineSync from 'readline-sync';
+import takeUserInput from './cli.js';
+// eslint-disable-next-line import/no-cycle
+import { userRightAnswerOutput, userWrongAnswerOutput } from './asset-functions.js';
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
 const startGame = (gameFunction, gameRules) => {
   let rightAnswersCounter = 0;
-  const userName = greetUser();
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(gameRules);
   for (let i = 0; i < gameRoundCounter; i += 1) {
     const result = gameFunction(userName);
