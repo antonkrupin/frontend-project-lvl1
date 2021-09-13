@@ -4,9 +4,9 @@ import getRandom from '../asset-functions.js';
 import mainGameFunction from '../index.js';
 
 // генерация последовательности
-const generateProgression = (progressionStep, progressionSize) => {
+const generateProgression = (progressionStep, progressionSize, firstElement = 5) => {
   const progresionArray = [];
-  const progressionFirstEl = getRandom(15);
+  const progressionFirstEl = firstElement;
   const hiddenIndex = getRandom(progressionSize);
   progresionArray.push(progressionFirstEl);
   for (let i = 0; i <= progressionSize; i += 1) {
