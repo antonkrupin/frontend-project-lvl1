@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-// eslint-disable-next-line import/no-cycle
 import { userRightAnswerOutput, userWrongAnswerOutput } from './asset-functions.js';
 
 const gameRoundCounter = 3;
