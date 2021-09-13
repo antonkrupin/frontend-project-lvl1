@@ -11,7 +11,7 @@ import guessEvenOrNot from '../games/brain-even-game.js';
 // eslint-disable-next-line import/no-cycle
 import startGame from './index.js';
 
-export const startFuckingGame = (gameName, gameRules) => {
+export const mainStartGame = (gameName, gameRules) => {
   const functionsObject = {
     giveNODResult,
     giveExpressionResult,
