@@ -13,7 +13,7 @@ const mainGameFunction = (gameFunction, gameRules) => {
     const result = gameFunction(userName);
     console.log(`Question: ${result[0]}`);
     const answer = readlineSync.question();
-    if (answer === result[1]) {
+    if (answer === String(result[1])) {
       userRightAnswerOutput(answer);
     } else {
       userWrongAnswerOutput(userName, answer, result[1]);
