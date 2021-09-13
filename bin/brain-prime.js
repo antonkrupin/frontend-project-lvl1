@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startFuckingGame } from '../src/asset-functions.js';
+import { mainStartGame } from '../src/asset-functions.js';
 
-startFuckingGame('guessPrimeOrNot', 'Answer "yes" if given number is prime. Otherwise answer "no".');
+mainStartGame('guessPrimeOrNot', 'Answer "yes" if given number is prime. Otherwise answer "no".');

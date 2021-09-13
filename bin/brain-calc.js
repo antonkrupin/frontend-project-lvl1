@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startFuckingGame } from '../src/asset-functions.js';
+import { mainStartGame } from '../src/asset-functions.js';
 
-startFuckingGame('giveExpressionResult', 'What is the result of the expression?');
+mainStartGame('giveExpressionResult', 'What is the result of the expression?');
