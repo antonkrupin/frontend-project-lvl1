@@ -4,11 +4,15 @@ import getRandom from '../asset-functions.js';
 import mainGameFunction from '../index.js';
 
 // игра четное число или нет
+const isEven = (number) => {
+  const result = (number % 2) === 0;
+  return result;
+};
+
 const guessEvenOrNot = () => {
   const randomNumber = getRandom(1000);
   const question = randomNumber;
-  const divisionRemainder = randomNumber % 2;
-  const result = divisionRemainder === 0 ? 'yes' : 'no';
+  const result = isEven(randomNumber) ? 'yes' : 'no';
   return [question, result];
 };
 
