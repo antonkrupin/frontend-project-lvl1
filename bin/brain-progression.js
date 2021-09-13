@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { mainStartGame } from '../src/asset-functions.js';
+import startGame from '../src/games/brain-progression-game.js';
 
-mainStartGame('completeProgression', 'What is the result of the expression?');
+startGame();
