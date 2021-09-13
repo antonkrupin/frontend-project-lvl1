@@ -11,7 +11,7 @@ const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
   }
 };
 
-const giveExpressionResult = () => {
+const generateRound = () => {
   const expressionsSignArray = ['+', '-', '*'];
   const expressionNumber = getRandom(expressionsSignArray.length);
   const firstNumber = getRandom(100);
@@ -22,4 +22,4 @@ const giveExpressionResult = () => {
   return [question, result];
 };
 
-export default giveExpressionResult;
+export default generateRound;
