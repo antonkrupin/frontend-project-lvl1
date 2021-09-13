@@ -4,7 +4,7 @@ import { userRightAnswerOutput, userWrongAnswerOutput } from './asset-functions.
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
-const startGame = (gameFunction, gameRules) => {
+const mainGameFunction = (gameFunction, gameRules) => {
   let rightAnswersCounter = 0;
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -31,4 +31,4 @@ const startGame = (gameFunction, gameRules) => {
   }
 };
 
-export default startGame;
+export default mainGameFunction;
