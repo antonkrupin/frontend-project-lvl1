@@ -9,7 +9,7 @@ const isEven = (number) => {
   return result;
 };
 
-const guessEvenOrNot = () => {
+const generateRound = () => {
   const randomNumber = getRandom(1000);
   const question = randomNumber;
   const result = isEven(randomNumber) ? 'yes' : 'no';
@@ -19,7 +19,7 @@ const guessEvenOrNot = () => {
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const startGame = () => {
-  mainGameFunction(guessEvenOrNot, gameRules);
+  mainGameFunction(generateRound, gameRules);
 };
 
 export default startGame;

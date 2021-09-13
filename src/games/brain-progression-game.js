@@ -18,7 +18,7 @@ const generateProgression = (progressionStep, progressionSize) => {
   return [progresionArray, elForGuess];
 };
 
-const completeProgression = () => {
+const generateRound = () => {
   const step = getRandom(15);
   const progression = generateProgression(step, 10);
   const question = progression[0];
@@ -29,7 +29,7 @@ const completeProgression = () => {
 const gameRules = 'What is the result of the expression?';
 
 const startGame = () => {
-  mainGameFunction(completeProgression, gameRules);
+  mainGameFunction(generateRound, gameRules);
 };
 
 export default startGame;

@@ -15,7 +15,7 @@ const isPrime = (number) => {
   return 'yes';
 };
 
-const guessPrimeOrNot = () => {
+const generateRound = () => {
   const question = getRandom(100);
   const result = isPrime(question);
   return [question, result];
@@ -24,7 +24,7 @@ const guessPrimeOrNot = () => {
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const startGame = () => {
-  mainGameFunction(guessPrimeOrNot, gameRules);
+  mainGameFunction(generateRound, gameRules);
 };
 
 export default startGame;
