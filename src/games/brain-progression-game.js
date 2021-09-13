@@ -23,7 +23,8 @@ const generateRound = () => {
   const progression = generateProgression(step, progressionSize, firstElement);
   const question = progression[0];
   const result = progression[1];
-  return [question, String(result)];
+  // console.log(`test!!!!!!!!! ${String(question).replace(/,/g, ' ')}`);
+  return [String(question).replace(/,/g, ' '), String(result)];
 };
 
 const gameRules = 'What is the result of the expression?';
