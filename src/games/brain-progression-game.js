@@ -23,7 +23,6 @@ const generateRound = () => {
   const progression = generateProgression(step, progressionSize, firstElement);
   const question = progression[0];
   const result = progression[1];
-  // console.log(`test!!!!!!!!! ${String(question).replace(/,/g, ' ')}`);
   return [String(question).replace(/,/g, ' '), String(result)];
 };
 
