@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
-// eslint-disable-next-line import/no-cycle
 import mainGameFunction from '../index.js';
 
 // генерация последовательности
