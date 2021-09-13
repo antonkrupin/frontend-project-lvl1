@@ -1,7 +1,12 @@
-import giveExpressionResult from './games/brain-calc-game.js';
+// eslint-disable-next-line import/no-cycle
+import generateRound from './games/brain-calc-game.js';
+// eslint-disable-next-line import/no-cycle
 import giveNODResult from './games/brain-gcd-game.js';
+// eslint-disable-next-line import/no-cycle
 import guessPrimeOrNot from './games/brain-prime-game.js';
+// eslint-disable-next-line import/no-cycle
 import completeProgression from './games/brain-progression-game.js';
+// eslint-disable-next-line import/no-cycle
 import guessEvenOrNot from './games/brain-even-game.js';
 // eslint-disable-next-line import/no-cycle
 import startGame from './index.js';
@@ -9,7 +14,7 @@ import startGame from './index.js';
 export const mainStartGame = (gameName, gameRules) => {
   const functionsObject = {
     giveNODResult,
-    giveExpressionResult,
+    generateRound,
     guessPrimeOrNot,
     completeProgression,
     guessEvenOrNot,
