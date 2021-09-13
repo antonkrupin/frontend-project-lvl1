@@ -20,7 +20,6 @@ const mainGameFunction = (gameFunction, gameRules) => {
       break;
     }
     rightAnswersCounter += 1;
-    // test
   }
   if (rightAnswersCounter === gameRoundCounter) {
     console.log(`Congratulations, ${userName}!`);
