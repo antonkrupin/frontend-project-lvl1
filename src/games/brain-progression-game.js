@@ -11,9 +11,8 @@ const generateProgression = (progressionStep, progressionSize, firstElement = 5)
     const progressionEl = progresionArray[i] + progressionStep;
     progresionArray.push(progressionEl);
   }
-  const elForGuess = progresionArray[hiddenIndex];
   progresionArray[hiddenIndex] = '..';
-  return [progresionArray, elForGuess];
+  return [progresionArray, hiddenIndex];
 };
 
 const generateRound = () => {
@@ -22,7 +21,7 @@ const generateRound = () => {
   const firstElement = getRandom(15);
   const progression = generateProgression(step, progressionSize, firstElement);
   const question = progression[0];
-  const result = progression[1];
+  const result = firstElement + (progression[1] * step);
   return [String(question).replace(/,/g, ' '), result];
 };
 
