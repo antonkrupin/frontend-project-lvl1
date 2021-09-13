@@ -5,19 +5,20 @@ import mainGameFunction from '../index.js';
 
 const isPrime = (number) => {
   if (number === 1) {
-    return 'yes';
+    // return 'yes';
+    return true;
   }
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const generateRound = () => {
   const question = getRandom(100);
-  const result = isPrime(question);
+  const result = isPrime(question) ? 'yes' : 'no';
   return [question, result];
 };
 
