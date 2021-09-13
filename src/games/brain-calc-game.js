@@ -3,9 +3,9 @@ import mainGameFunction from '../index.js';
 
 const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
   switch (expressionSign) {
-    case '+': return String(firstNumber + secondNumber);
-    case '-': return String(firstNumber - secondNumber);
-    case '*': return String(firstNumber * secondNumber);
+    case '+': return firstNumber + secondNumber;
+    case '-': return firstNumber - secondNumber;
+    case '*': return firstNumber * secondNumber;
     default:
       throw new Error('Can`t calculate expression');
   }
