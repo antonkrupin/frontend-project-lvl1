@@ -3,21 +3,9 @@ import getRandom from '../asset-functions.js';
 
 const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
   switch (expressionSign) {
-    case '+':
-    {
-      const resultPlus = firstNumber + secondNumber;
-      return String(resultPlus);
-    }
-    case '-':
-    {
-      const resultMinus = firstNumber - secondNumber;
-      return String(resultMinus);
-    }
-    case '*':
-    {
-      const resultMultiplication = firstNumber * secondNumber;
-      return String(resultMultiplication);
-    }
+    case '+': return String(firstNumber + secondNumber);
+    case '-': return String(firstNumber - secondNumber);
+    case '*': return String(firstNumber * secondNumber);
     default:
       throw new Error('Can`t calculate expression');
   }
