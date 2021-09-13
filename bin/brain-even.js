@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { mainStartGame } from '../src/asset-functions.js';
+import startGame from '../src/games/brain-even-game.js';
 
-mainStartGame('guessEvenOrNot', 'Answer "yes" if the number is even, otherwise answer "no".');
+startGame();
