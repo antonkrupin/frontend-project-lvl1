@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import getRandom from '../src/asset-functions.js';
+import getRandom from '../asset-functions.js';
 
 // генерация последовательности
 const generateProgression = (progressionStep, progressionSize) => {

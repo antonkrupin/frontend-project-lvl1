@@ -1,13 +1,8 @@
-// eslint-disable-next-line import/no-cycle
-import giveExpressionResult from '../games/brain-calc-game.js';
-// eslint-disable-next-line import/no-cycle
-import giveNODResult from '../games/brain-gcd-game.js';
-// eslint-disable-next-line import/no-cycle
-import guessPrimeOrNot from '../games/brain-prime-game.js';
-// eslint-disable-next-line import/no-cycle
-import completeProgression from '../games/brain-progression-game.js';
-// eslint-disable-next-line import/no-cycle
-import guessEvenOrNot from '../games/brain-even-game.js';
+import giveExpressionResult from './games/brain-calc-game.js';
+import giveNODResult from './games/brain-gcd-game.js';
+import guessPrimeOrNot from './games/brain-prime-game.js';
+import completeProgression from './games/brain-progression-game.js';
+import guessEvenOrNot from './games/brain-even-game.js';
 // eslint-disable-next-line import/no-cycle
 import startGame from './index.js';
 
