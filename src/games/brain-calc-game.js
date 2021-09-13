@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
 
-// eslint-disable-next-line consistent-return
 const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
   switch (expressionSign) {
     case '+':
@@ -20,8 +19,7 @@ const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
       return String(resultMultiplication);
     }
     default:
-    // do nothing;
-      break;
+      throw new Error('Can`t calculate expression');
   }
 };
 
