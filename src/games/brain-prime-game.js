@@ -5,7 +5,6 @@ import mainGameFunction from '../index.js';
 
 const isPrime = (number) => {
   if (number === 1) {
-    // return 'yes';
     return true;
   }
   for (let i = 2; i < number; i += 1) {
