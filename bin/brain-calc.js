@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import { mainStartGame } from '../src/asset-functions.js';
+// import { mainStartGame } from '../src/asset-functions.js';
+import startGame from '../src/games/brain-calc-game.js';
 
-mainStartGame('giveExpressionResult', 'What is the result of the expression?');
+startGame();
+// mainStartGame('giveExpressionResult', 'What is the result of the expression?');
