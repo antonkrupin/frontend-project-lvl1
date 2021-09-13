@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
+// eslint-disable-next-line import/no-cycle
+import mainGameFunction from '../index.js';
 
 // генерация последовательности
 const generateProgression = (progressionStep, progressionSize) => {
@@ -24,4 +26,10 @@ const completeProgression = () => {
   return [question, String(result)];
 };
 
-export default completeProgression;
+const gameRules = 'What is the result of the expression?';
+
+const startGame = () => {
+  mainGameFunction(completeProgression, gameRules);
+};
+
+export default startGame;
