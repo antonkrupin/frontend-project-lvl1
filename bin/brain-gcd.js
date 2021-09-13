@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { mainStartGame } from '../src/asset-functions.js';
+import startGame from '../src/games/brain-even-game.js';
 
-mainStartGame('giveNODResult', 'Find the greatest common divisor of given numbers');
+startGame();
