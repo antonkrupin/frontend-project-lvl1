@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
+// eslint-disable-next-line import/no-cycle
+import mainGameFunction from '../index.js';
 
 const isPrime = (number) => {
   if (number === 1) {
@@ -19,4 +21,10 @@ const guessPrimeOrNot = () => {
   return [question, result];
 };
 
-export default guessPrimeOrNot;
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const startGame = () => {
+  mainGameFunction(guessPrimeOrNot, gameRules);
+};
+
+export default startGame;
