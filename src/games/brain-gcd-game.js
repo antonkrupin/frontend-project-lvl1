@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
+// eslint-disable-next-line import/no-cycle
+import mainGameFunction from '../index.js';
 
 // нахождение наибольшего общего делителя
 const findNOD = (number1, number2) => {
@@ -17,4 +19,10 @@ const giveNODResult = () => {
   return [question, String(result)];
 };
 
-export default giveNODResult;
+const gameRules = 'Find the greatest common divisor of given numbers';
+
+const startGame = () => {
+  mainGameFunction(giveNODResult, gameRules);
+};
+
+export default startGame;
