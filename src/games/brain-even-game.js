@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
+// eslint-disable-next-line import/no-cycle
+import mainGameFunction from '../index.js';
 
 // игра четное число или нет
 const guessEvenOrNot = () => {
@@ -10,4 +12,10 @@ const guessEvenOrNot = () => {
   return [question, result];
 };
 
-export default guessEvenOrNot;
+const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const startGame = () => {
+  mainGameFunction(guessEvenOrNot, gameRules);
+};
+
+export default startGame;
