@@ -19,6 +19,8 @@ const generateRound = () => {
 
 const gameRules = 'Find the greatest common divisor of given numbers';
 
+// сам бы я точно не смог догадаться
+// что по итогу нужно что то такое
 const startGame = () => {
   mainGameFunction(generateRound, gameRules);
 };
