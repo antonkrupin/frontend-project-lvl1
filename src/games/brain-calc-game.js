@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import getRandom from '../asset-functions.js';
+// eslint-disable-next-line import/no-cycle
+import startGame from '../index.js';
 
 const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
   switch (expressionSign) {
@@ -22,4 +24,6 @@ const generateRound = () => {
   return [question, result];
 };
 
-export default generateRound;
+const gameRules = 'What is the result of the expression?';
+
+export default () => startGame(generateRound, gameRules);
