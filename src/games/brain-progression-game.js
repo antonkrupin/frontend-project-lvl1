@@ -1,4 +1,4 @@
-import getRandom from '../asset-functions.js';
+import getRandom from '../utils.js';
 import mainGameFunction from '../index.js';
 
 // генерация последовательности
