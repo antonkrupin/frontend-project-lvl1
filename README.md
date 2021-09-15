@@ -2,15 +2,11 @@
 Clone this repository to your computer.
 Run make install in terminal.
 
-*Brain-even - try to guess if the number is even. Use **brain-even** in terminal to start the game.  
-
-*Brain-calc - try to calculate value of the expression. Use **brain-calc** in terminal to start the game.  
-
-*Brain-gcd - try to calculate the greatest common divisor. Use **brain-gcd** in terminal to start the game.  
-
-*Brain-prime - try to guess if the number is prime. Use **brain-prime** in terminal to start the game.  
-
-*Brain-progression - try to continue the sequence. Use **brain-progression** in terminal to start the game.  
+Brain-even - try to guess if the number is even. Use **brain-even** in terminal to start the game.  
+Brain-calc - try to calculate value of the expression. Use **brain-calc** in terminal to start the game.  
+Brain-gcd - try to calculate the greatest common divisor. Use **brain-gcd** in terminal to start the game.  
+Brain-prime - try to guess if the number is prime. Use **brain-prime** in terminal to start the game.  
+Brain-progression - try to continue the sequence. Use **brain-progression** in terminal to start the game.  
 
 
 ### Hexlet tests and linter status:
