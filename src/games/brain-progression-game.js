@@ -4,25 +4,25 @@ import mainGameFunction from '../index.js';
 const gameRules = 'What is the result of the expression?';
 
 // генерация последовательности
-const generateProgression = (progressionStep, progressionSize, firstElement = 5) => {
+const generateProgression = (progressionStep, progressionSize, firstElement = 5, hiddenIndex) => {
   const progresionArray = [];
-  const hiddenIndex = getRandom(0, progressionSize);
   progresionArray.push(firstElement);
   for (let i = 0; i <= progressionSize; i += 1) {
     const progressionEl = progresionArray[i] + progressionStep;
     progresionArray.push(progressionEl);
   }
   progresionArray[hiddenIndex] = '..';
-  return [progresionArray, hiddenIndex];
+  return [progresionArray];
 };
 
 const generateRound = () => {
   const progressionSize = 10;
   const step = getRandom(0, 15);
   const firstElement = getRandom(0, 15);
-  const progression = generateProgression(step, progressionSize, firstElement);
+  const hiddenIndex = getRandom(0, progressionSize);
+  const progression = generateProgression(step, progressionSize, firstElement, hiddenIndex);
   const question = progression[0];
-  const result = firstElement + (progression[1] * step);
+  const result = firstElement + (hiddenIndex * step);
   return [String(question).replace(/,/g, ' '), result];
 };
 
