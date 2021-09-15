@@ -12,7 +12,7 @@ const generateProgression = (progressionStep, progressionSize, firstElement = 5,
     progresionArray.push(progressionEl);
   }
   progresionArray[hiddenIndex] = '..';
-  return [progresionArray];
+  return progresionArray.join(' ');
 };
 
 const generateRound = () => {
@@ -21,9 +21,9 @@ const generateRound = () => {
   const firstElement = getRandom(0, 15);
   const hiddenIndex = getRandom(0, progressionSize);
   const progression = generateProgression(step, progressionSize, firstElement, hiddenIndex);
-  const question = progression[0];
+  const question = progression;
   const result = firstElement + (hiddenIndex * step);
-  return [String(question).replace(/,/g, ' '), result];
+  return [question, result];
 };
 
 const startGame = () => {
