@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { userRightAnswerOutput, userWrongAnswerOutput } from './asset-functions.js';
 
 const gameRoundCounter = 3;
 // общая функция для старта игры
@@ -14,9 +13,11 @@ const mainGameFunction = (gameFunction, gameRules) => {
     console.log(`Question: ${result[0]}`);
     const answer = readlineSync.question();
     if (answer === String(result[1])) {
-      userRightAnswerOutput(answer);
+      console.log(`Your answer: ${answer}`);
+      console.log('Correct!');
     } else {
-      userWrongAnswerOutput(userName, answer, result[1]);
+      console.log(`${answer} is wrong answer ;(. Correct was '${result[1]}'`);
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
     rightAnswersCounter += 1;
