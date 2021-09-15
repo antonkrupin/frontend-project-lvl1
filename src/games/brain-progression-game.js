@@ -1,6 +1,8 @@
 import getRandom from '../utils.js';
 import mainGameFunction from '../index.js';
 
+const gameRules = 'What is the result of the expression?';
+
 // генерация последовательности
 const generateProgression = (progressionStep, progressionSize, firstElement = 5) => {
   const progresionArray = [];
@@ -24,8 +26,6 @@ const generateRound = () => {
   const result = firstElement + (progression[1] * step);
   return [String(question).replace(/,/g, ' '), result];
 };
-
-const gameRules = 'What is the result of the expression?';
 
 const startGame = () => {
   mainGameFunction(generateRound, gameRules);

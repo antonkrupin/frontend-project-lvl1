@@ -1,6 +1,8 @@
 import getRandom from '../utils.js';
 import mainGameFunction from '../index.js';
 
+const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 // игра четное число или нет
 const isEven = (number) => {
   const result = (number % 2) === 0;
@@ -13,8 +15,6 @@ const generateRound = () => {
   const result = isEven(randomNumber) ? 'yes' : 'no';
   return [question, result];
 };
-
-const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const startGame = () => {
   mainGameFunction(generateRound, gameRules);

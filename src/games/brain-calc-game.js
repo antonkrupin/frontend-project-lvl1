@@ -1,6 +1,8 @@
 import getRandom from '../utils.js';
 import mainGameFunction from '../index.js';
 
+const gameRules = 'What is the result of the expression?';
+
 const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
   switch (expressionSign) {
     case '+': return firstNumber + secondNumber;
@@ -21,8 +23,6 @@ const generateRound = () => {
   const result = calculateExpression(firstNumber, secondNumber, sign);
   return [question, result];
 };
-
-const gameRules = 'What is the result of the expression?';
 
 const startGame = () => {
   mainGameFunction(generateRound, gameRules);

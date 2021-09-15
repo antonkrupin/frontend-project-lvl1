@@ -1,6 +1,8 @@
 import getRandom from '../utils.js';
 import mainGameFunction from '../index.js';
 
+const gameRules = 'Find the greatest common divisor of given numbers';
+
 // нахождение наибольшего общего делителя
 const findGCD = (number1, number2) => {
   if (number2 === 0) {
@@ -16,8 +18,6 @@ const generateRound = () => {
   const result = findGCD(firstNumber, secondNumber);
   return [question, String(result)];
 };
-
-const gameRules = 'Find the greatest common divisor of given numbers';
 
 // сам бы я точно не смог догадаться
 // что по итогу нужно что то такое
