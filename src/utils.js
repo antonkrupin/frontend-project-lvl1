@@ -2,6 +2,6 @@
 // был выход за пределы массива
 // сразу не понял, в чем дело
 // просто надо было length-1 поставить
-const getRandom = (max, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export default getRandom;
