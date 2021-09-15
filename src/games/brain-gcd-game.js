@@ -10,8 +10,8 @@ const findGCD = (number1, number2) => {
 };
 
 const generateRound = () => {
-  const firstNumber = getRandom(100);
-  const secondNumber = getRandom(100);
+  const firstNumber = getRandom(0, 100);
+  const secondNumber = getRandom(0, 100);
   const question = `${firstNumber} ${secondNumber}`;
   const result = findGCD(firstNumber, secondNumber);
   return [question, String(result)];

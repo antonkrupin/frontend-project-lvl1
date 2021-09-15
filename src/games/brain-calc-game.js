@@ -13,9 +13,9 @@ const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
 
 const generateRound = () => {
   const expressionsSignArray = ['+', '-', '*'];
-  const expressionNumber = getRandom(expressionsSignArray.length - 1);
-  const firstNumber = getRandom(100);
-  const secondNumber = getRandom(100);
+  const expressionNumber = getRandom(0, expressionsSignArray.length - 1);
+  const firstNumber = getRandom(0, 100);
+  const secondNumber = getRandom(0, 100);
   const sign = expressionsSignArray[expressionNumber];
   const question = `${firstNumber} ${sign} ${secondNumber}`;
   const result = calculateExpression(firstNumber, secondNumber, sign);

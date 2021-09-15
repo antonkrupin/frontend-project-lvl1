@@ -5,7 +5,7 @@ import mainGameFunction from '../index.js';
 const generateProgression = (progressionStep, progressionSize, firstElement = 5) => {
   const progresionArray = [];
   const progressionFirstEl = firstElement;
-  const hiddenIndex = getRandom(progressionSize);
+  const hiddenIndex = getRandom(0, progressionSize);
   progresionArray.push(progressionFirstEl);
   for (let i = 0; i <= progressionSize; i += 1) {
     const progressionEl = progresionArray[i] + progressionStep;
@@ -17,8 +17,8 @@ const generateProgression = (progressionStep, progressionSize, firstElement = 5)
 
 const generateRound = () => {
   const progressionSize = 10;
-  const step = getRandom(15);
-  const firstElement = getRandom(15);
+  const step = getRandom(0, 15);
+  const firstElement = getRandom(0, 15);
   const progression = generateProgression(step, progressionSize, firstElement);
   const question = progression[0];
   const result = firstElement + (progression[1] * step);

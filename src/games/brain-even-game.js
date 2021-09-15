@@ -8,7 +8,7 @@ const isEven = (number) => {
 };
 
 const generateRound = () => {
-  const randomNumber = getRandom(1000);
+  const randomNumber = getRandom(0, 1000);
   const question = randomNumber;
   const result = isEven(randomNumber) ? 'yes' : 'no';
   return [question, result];
