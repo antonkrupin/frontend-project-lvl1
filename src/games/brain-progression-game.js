@@ -6,9 +6,8 @@ const gameRules = 'What is the result of the expression?';
 // генерация последовательности
 const generateProgression = (progressionStep, progressionSize, firstElement = 5) => {
   const progresionArray = [];
-  const progressionFirstEl = firstElement;
   const hiddenIndex = getRandom(0, progressionSize);
-  progresionArray.push(progressionFirstEl);
+  progresionArray.push(firstElement);
   for (let i = 0; i <= progressionSize; i += 1) {
     const progressionEl = progresionArray[i] + progressionStep;
     progresionArray.push(progressionEl);
