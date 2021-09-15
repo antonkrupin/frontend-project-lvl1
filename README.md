@@ -1,3 +1,9 @@
+Brain-Games project includes five games.
+
+Brain-even - guess if the number is even. Use **brain-even** in terminal to start the game
+
+
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/antonkrupin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/antonkrupin/frontend-project-lvl1/actions)
 ### Codeclimate Maintainability Badge:
