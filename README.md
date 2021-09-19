@@ -21,3 +21,5 @@ Run make install in terminal.
 [![asciicast](https://asciinema.org/a/7z9nugDXJAuQME3k3dj9HA3fB.svg)](https://asciinema.org/a/7z9nugDXJAuQME3k3dj9HA3fB)
 ### Example of work - brain-even
 [![asciicast](https://asciinema.org/a/e52xVxIpyAEuFTw8R5Rg9j2sx.svg)](https://asciinema.org/a/e52xVxIpyAEuFTw8R5Rg9j2sx)
+### Example of work - brain-prime
+[![asciicast](https://asciinema.org/a/MuGue0wQ39TNxOhRMheM7Z3nS.svg)](https://asciinema.org/a/MuGue0wQ39TNxOhRMheM7Z3nS)
