@@ -23,3 +23,5 @@ Run make install in terminal.
 [![asciicast](https://asciinema.org/a/e52xVxIpyAEuFTw8R5Rg9j2sx.svg)](https://asciinema.org/a/e52xVxIpyAEuFTw8R5Rg9j2sx)
 ### Example of work - brain-prime
 [![asciicast](https://asciinema.org/a/MuGue0wQ39TNxOhRMheM7Z3nS.svg)](https://asciinema.org/a/MuGue0wQ39TNxOhRMheM7Z3nS)
+### Example of work - brain-progression
+[![asciicast](https://asciinema.org/a/5EX5Po9b7apnD0m8CL42mYz8a.svg)](https://asciinema.org/a/5EX5Po9b7apnD0m8CL42mYz8a)
