@@ -19,3 +19,5 @@ Run make install in terminal.
 [![asciicast](https://asciinema.org/a/MsI63Wxd9wdo41Slank4kSgiC.svg)](https://asciinema.org/a/MsI63Wxd9wdo41Slank4kSgiC)
 ### Example of work - brain-calc
 [![asciicast](https://asciinema.org/a/7z9nugDXJAuQME3k3dj9HA3fB.svg)](https://asciinema.org/a/7z9nugDXJAuQME3k3dj9HA3fB)
+### Example of work - brain-even
+[![asciicast](https://asciinema.org/a/e52xVxIpyAEuFTw8R5Rg9j2sx.svg)](https://asciinema.org/a/e52xVxIpyAEuFTw8R5Rg9j2sx)
