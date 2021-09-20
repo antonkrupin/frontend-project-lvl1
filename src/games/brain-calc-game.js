@@ -12,7 +12,7 @@ const calculateExpression = (firstNumber, secondNumber, expressionSign) => {
       throw new Error('Can`t calculate expression');
   }
 };
-// comment
+
 const generateRound = () => {
   const expressionsSignArray = ['+', '-', '*'];
   const expressionNumber = getRandom(0, expressionsSignArray.length - 1);
