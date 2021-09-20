@@ -1,9 +1,6 @@
 import getRandom from '../utils.js';
 import mainGameFunction from '../index.js';
 
-// где то читал, что лучше стараться
-// объявлять константы ближе к месту использования
-// поэтому решил объявить их сразу над функцией startGame
 const gameRules = 'What is the result of the expression?';
 
 const calculateExpression = (firstNumber, secondNumber, expressionSign) => {

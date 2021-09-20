@@ -3,7 +3,6 @@ import mainGameFunction from '../index.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-// игра четное число или нет
 const isEven = (number) => (number % 2) === 0;
 
 const generateRound = () => {

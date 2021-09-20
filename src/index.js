@@ -1,11 +1,7 @@
 import readlineSync from 'readline-sync';
-// удалил функции для вывода сообщений
-// в случае верного и не верного ответа
-// правда не понял, почему это нельзя было выделить
-// в отдельные функции
 
 const gameRoundCounter = 3;
-// общая функция для старта игры
+
 const mainGameFunction = (gameFunction, gameRules) => {
   let rightAnswersCounter = 0;
   console.log('Welcome to the Brain Games!');

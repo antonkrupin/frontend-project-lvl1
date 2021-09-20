@@ -3,7 +3,6 @@ import mainGameFunction from '../index.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers';
 
-// нахождение наибольшего общего делителя
 const findGCD = (number1, number2) => {
   if (number2 === 0) {
     return Math.abs(number1);
@@ -19,8 +18,6 @@ const generateRound = () => {
   return [question, String(result)];
 };
 
-// сам бы я точно не смог догадаться
-// что по итогу нужно что то такое
 const startGame = () => {
   mainGameFunction(generateRound, gameRules);
 };

@@ -3,8 +3,7 @@ import mainGameFunction from '../index.js';
 
 const gameRules = 'What is the result of the expression?';
 
-// генерация последовательности
-const generateProgression = (progressionStep, progressionSize, firstElement = 5, hiddenIndex) => {
+const generateProgression = (progressionStep, progressionSize, firstElement, hiddenIndex) => {
   const progresionArray = [];
   progresionArray.push(firstElement);
   for (let i = 0; i <= progressionSize; i += 1) {
