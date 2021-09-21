@@ -8,7 +8,7 @@ const mainGameFunction = (gameFunction, gameRules) => {
   console.log(`Hello, ${userName}!`);
   console.log(gameRules);
   for (let i = 0; i < gameRoundCounter; i += 1) {
-    const result = gameFunction(userName);
+    const result = gameFunction();
     console.log(`Question: ${result[0]}`);
     const answer = readlineSync.question();
     if (answer !== String(result[1])) {
