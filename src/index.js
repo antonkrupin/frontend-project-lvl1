@@ -10,14 +10,14 @@ const mainGameFunction = (startGame, gameRules) => {
   for (let i = 0; i < gameRoundCounter; i += 1) {
     const result = startGame();
     console.log(`Question: ${result[0]}`);
-    const answer = readlineSync.question();
-    if (answer !== String(result[1])) {
-      console.log(`Your answer: ${answer}`);
-      console.log(`${answer} is wrong answer ;(. Correct was '${result[1]}'`);
+    const userAnswer = readlineSync.question();
+    if (userAnswer !== String(result[1])) {
+      console.log(`Your answer: ${userAnswer}`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct was '${result[1]}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
-    console.log(`Your answer: ${answer}`);
+    console.log(`Your answer: ${userAnswer}`);
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
