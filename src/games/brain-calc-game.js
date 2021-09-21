@@ -1,5 +1,5 @@
 import getRandom from '../utils.js';
-import mainGameFunction from '../index.js';
+import invokeGameFunction from '../index.js';
 
 const gameRules = 'What is the result of the expression?';
 
@@ -25,7 +25,7 @@ const generateRound = () => {
 };
 
 const startGame = () => {
-  mainGameFunction(generateRound, gameRules);
+  invokeGameFunction(generateRound, gameRules);
 };
 
 export default startGame;

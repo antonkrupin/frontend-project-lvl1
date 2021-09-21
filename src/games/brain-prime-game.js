@@ -1,5 +1,5 @@
 import getRandom from '../utils.js';
-import mainGameFunction from '../index.js';
+import invokeGameFunction from '../index.js';
 
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -22,7 +22,7 @@ const generateRound = () => {
 };
 
 const startGame = () => {
-  mainGameFunction(generateRound, gameRules);
+  invokeGameFunction(generateRound, gameRules);
 };
 
 export default startGame;
