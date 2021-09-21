@@ -8,12 +8,12 @@ const mainGameFunction = (startGame, gameRules) => {
   console.log(`Hello, ${userName}!`);
   console.log(gameRules);
   for (let i = 0; i < gameRoundCounter; i += 1) {
-    const result = startGame();
-    console.log(`Question: ${result[0]}`);
+    const [question, answer] = startGame();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question();
-    if (userAnswer !== String(result[1])) {
+    if (userAnswer !== String(answer)) {
       console.log(`Your answer: ${userAnswer}`);
-      console.log(`${userAnswer} is wrong answer ;(. Correct was '${result[1]}'`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct was '${answer}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
