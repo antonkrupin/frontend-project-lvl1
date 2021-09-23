@@ -12,7 +12,7 @@ export default (startGame, gameRules) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question();
     console.log(`Your answer: ${userAnswer}`);
-    if (userAnswer !== String(answer)) {
+    if (userAnswer !== answer) {
       console.log(`${userAnswer} is wrong answer ;(. Correct was '${answer}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
