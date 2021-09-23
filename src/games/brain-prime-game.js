@@ -4,7 +4,7 @@ import invokeGameFunction from '../index.js';
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
-  if (number === 1) {
+  if (number < 2) {
     return false;
   }
   for (let i = 2; i < number; i += 1) {
@@ -18,7 +18,7 @@ const isPrime = (number) => {
 const generateRound = () => {
   const question = getRandom(0, 100);
   const result = isPrime(question) ? 'yes' : 'no';
-  return [question, result];
+  return [question, String(result)];
 };
 
 const startGame = () => {
