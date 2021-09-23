@@ -21,7 +21,7 @@ const generateRound = () => {
   const sign = expressionsSignArray[expressionNumber];
   const question = `${firstNumber} ${sign} ${secondNumber}`;
   const result = calculateExpression(firstNumber, secondNumber, sign);
-  return [question, result];
+  return [question, String(result)];
 };
 
 const startGame = () => {

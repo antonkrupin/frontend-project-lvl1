@@ -21,7 +21,7 @@ const generateRound = () => {
   const progression = generateProgression(step, progressionSize, firstElement, hiddenIndex);
   const question = progression;
   const result = firstElement + (hiddenIndex * step);
-  return [question, result];
+  return [question, String(result)];
 };
 
 const startGame = () => {
