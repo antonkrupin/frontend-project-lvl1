@@ -5,7 +5,7 @@ const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".
 
 const isPrime = (number) => {
   if (number === 1) {
-    return true;
+    return false;
   }
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
