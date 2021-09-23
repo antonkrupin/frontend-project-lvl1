@@ -5,8 +5,7 @@ const gameRules = 'What is the result of the expression?';
 
 const generateProgression = (progressionStep, progressionSize, firstElement, hiddenIndex) => {
   const progresionArray = [];
-  progresionArray.push(firstElement);
-  for (let i = 1; i < progressionSize; i += 1) {
+  for (let i = 0; i < progressionSize; i += 1) {
     const progressionEl = firstElement + progressionStep * i;
     progresionArray.push(progressionEl);
   }
