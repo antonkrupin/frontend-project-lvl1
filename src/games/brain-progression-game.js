@@ -18,8 +18,7 @@ const generateRound = () => {
   const step = getRandom(0, 15);
   const firstElement = getRandom(0, 15);
   const hiddenIndex = getRandom(0, progressionSize);
-  const progression = generateProgression(step, progressionSize, firstElement, hiddenIndex);
-  const question = progression;
+  const question = generateProgression(step, progressionSize, firstElement, hiddenIndex);
   const result = firstElement + (hiddenIndex * step);
   return [question, String(result)];
 };
