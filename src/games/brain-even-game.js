@@ -9,7 +9,7 @@ const generateRound = () => {
   const randomNumber = getRandom(0, 1000);
   const question = randomNumber;
   const result = isEven(randomNumber) ? 'yes' : 'no';
-  return [question, String(result)];
+  return [question, result];
 };
 
 const startGame = () => {
