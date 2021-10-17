@@ -1,7 +1,8 @@
 **Brain-Games project** includes five games.
 Clone this repository to your computer.
-Run make install in terminal.
 Run npm link in terminal.
+Run make install in terminal.
+
 
 **Brain-even** - try to guess if the number is even. Use **brain-even** in terminal to start the game.  
 **Brain-calc** - try to calculate value of the expression. Use **brain-calc** in terminal to start the game.  
